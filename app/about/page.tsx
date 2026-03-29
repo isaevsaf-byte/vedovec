@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import SectionWrapper from "@/components/SectionWrapper";
 import ContactForm from "@/components/ContactForm";
+import { getTeamMembers } from "@/lib/sanity";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "О нас",
@@ -8,31 +11,11 @@ export const metadata: Metadata = {
     "Vedovec — таможенный брокер в Ташкенте. 5 лет на рынке, более 500 клиентов. Команда профессиональных таможенных специалистов Узбекистана.",
 };
 
-const teamMembers = [
-  {
-    name: "Алексей Ведов",
-    role: "Генеральный директор",
-    bio: "Более 10 лет в таможенном деле. Специализируется на сложных импортных операциях и работе с госорганами.",
-    initials: "АВ",
-  },
-  {
-    name: "Нилуфар Рашидова",
-    role: "Ведущий таможенный декларант",
-    bio: "Сертифицированный специалист по таможенному декларированию. Эксперт по ТН ВЭД и классификации товаров.",
-    initials: "НР",
-  },
-  {
-    name: "Бахром Юсупов",
-    role: "Руководитель отдела логистики",
-    bio: "Специалист по международным перевозкам и координации цепочек поставок через Узбекистан.",
-    initials: "БЮ",
-  },
-  {
-    name: "Диля Хасанова",
-    role: "Юрист по ВЭД",
-    bio: "Специализируется на правовом сопровождении внешнеэкономической деятельности, разрешении таможенных споров.",
-    initials: "ДХ",
-  },
+const fallbackTeam = [
+  { name: "Алексей Ведов", role: "Генеральный директор", bio: "Более 10 лет в таможенном деле. Специализируется на сложных импортных операциях и работе с госорганами.", initials: "АВ" },
+  { name: "Нилуфар Рашидова", role: "Ведущий таможенный декларант", bio: "Сертифицированный специалист по таможенному декларированию. Эксперт по ТН ВЭД и классификации товаров.", initials: "НР" },
+  { name: "Бахром Юсупов", role: "Руководитель отдела логистики", bio: "Специалист по международным перевозкам и координации цепочек поставок через Узбекистан.", initials: "БЮ" },
+  { name: "Диля Хасанова", role: "Юрист по ВЭД", bio: "Специализируется на правовом сопровождении внешнеэкономической деятельности, разрешении таможенных споров.", initials: "ДХ" },
 ];
 
 const values = [
@@ -58,7 +41,16 @@ const values = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const teamFromSanity = await getTeamMembers().catch(() => []);
+  const teamMembers: { name: string; role: string; bio: string; initials: string }[] =
+    teamFromSanity.length > 0
+      ? teamFromSanity.map((m: { name: string; role: string; bio: string }) => ({
+          ...m,
+          initials: m.name.split(" ").map((w: string) => w[0]).join("").slice(0, 2).toUpperCase(),
+        }))
+      : fallbackTeam;
+
   return (
     <>
       {/* Page Header */}

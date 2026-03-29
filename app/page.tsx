@@ -6,17 +6,26 @@ import ClientLogos from "@/components/ClientLogos";
 import ContactForm from "@/components/ContactForm";
 import SectionWrapper from "@/components/SectionWrapper";
 import Link from "next/link";
+import { getServices, getCaseStudies, getClientLogos, getCompany } from "@/lib/sanity";
 
-export default function HomePage() {
+export const revalidate = 60;
+
+export default async function HomePage() {
+  const [services, cases, logos, company] = await Promise.all([
+    getServices().catch(() => []),
+    getCaseStudies().catch(() => []),
+    getClientLogos().catch(() => []),
+    getCompany().catch(() => null),
+  ]);
+
+  const stats = company?.stats ?? undefined;
+
   return (
     <>
-      {/* Hero */}
       <HeroSection />
 
-      {/* Stats */}
-      <StatsBar />
+      <StatsBar stats={stats} />
 
-      {/* Services */}
       <SectionWrapper id="services" className="bg-slate-50">
         <div className="text-center mb-12">
           <span className="text-accent font-semibold text-sm uppercase tracking-widest">Что мы делаем</span>
@@ -28,7 +37,7 @@ export default function HomePage() {
             оформления. Берём на себя весь бюрократический процесс.
           </p>
         </div>
-        <ServicesGrid />
+        <ServicesGrid services={services} />
         <div className="mt-10 text-center">
           <Link
             href="/services"
@@ -42,7 +51,6 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* Cases */}
       <SectionWrapper id="cases">
         <div className="text-center mb-12">
           <span className="text-accent font-semibold text-sm uppercase tracking-widest">Наш опыт</span>
@@ -54,20 +62,18 @@ export default function HomePage() {
             результаты в цифрах.
           </p>
         </div>
-        <CasesGrid preview />
+        <CasesGrid cases={cases} preview />
       </SectionWrapper>
 
-      {/* Client Logos */}
       <SectionWrapper className="bg-slate-50">
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-slate-700">
             Нам доверяют ведущие компании Узбекистана
           </h2>
         </div>
-        <ClientLogos />
+        <ClientLogos logos={logos} />
       </SectionWrapper>
 
-      {/* Contact CTA */}
       <SectionWrapper className="bg-primary text-white" id="contact">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -89,27 +95,16 @@ export default function HomePage() {
                 "Персональный менеджер",
               ].map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-accent flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
+                  <svg className="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-
           <div className="bg-white rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-slate-800 mb-6">
-              Оставить заявку
-            </h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-6">Оставить заявку</h3>
             <ContactForm compact />
           </div>
         </div>

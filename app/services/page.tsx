@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import SectionWrapper from "@/components/SectionWrapper";
 import ServicesGrid from "@/components/ServicesGrid";
 import ContactForm from "@/components/ContactForm";
+import { getServices } from "@/lib/sanity";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Услуги",
@@ -16,7 +19,8 @@ const processSteps = [
   { step: "04", title: "Выпуск", desc: "Товар выпущен. Вы получаете все документы и отчёт." },
 ];
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const services = await getServices().catch(() => []);
   return (
     <>
       {/* Page Header */}
@@ -35,7 +39,7 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <SectionWrapper className="bg-slate-50">
-        <ServicesGrid />
+        <ServicesGrid services={services} />
       </SectionWrapper>
 
       {/* Process */}

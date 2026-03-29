@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import SectionWrapper from "@/components/SectionWrapper";
 import CasesGrid from "@/components/CasesGrid";
 import ContactForm from "@/components/ContactForm";
+import { getCaseStudies } from "@/lib/sanity";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Кейсы",
@@ -9,7 +12,8 @@ export const metadata: Metadata = {
     "Примеры успешных таможенных оформлений: импорт оборудования, экспорт сельхозпродукции, регулярные поставки из Китая, Турции, ОАЭ.",
 };
 
-export default function CasesPage() {
+export default async function CasesPage() {
+  const cases = await getCaseStudies().catch(() => []);
   return (
     <>
       {/* Page Header */}
@@ -28,7 +32,7 @@ export default function CasesPage() {
 
       {/* Cases */}
       <SectionWrapper className="bg-slate-50">
-        <CasesGrid />
+        <CasesGrid cases={cases} />
       </SectionWrapper>
 
       {/* CTA */}
