@@ -51,8 +51,8 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Контакты</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
-                <a href="tel:+998901234567" className="hover:text-accent transition-colors">
-                  +998 90 123-45-67
+                <a href="tel:+998909733090" className="hover:text-accent transition-colors">
+                  +998 90 973-30-90
                 </a>
               </li>
               <li>
@@ -69,7 +69,7 @@ export default function Footer() {
                   Telegram
                 </a>
                 <a
-                  href="https://wa.me/998901234567"
+                  href="https://wa.me/998909733090"
                   className="text-slate-300 hover:text-accent transition-colors font-medium"
                 >
                   WhatsApp

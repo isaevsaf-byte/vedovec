@@ -16,8 +16,8 @@ const contactItems = [
       </svg>
     ),
     label: "Телефон",
-    value: "+998 90 123-45-67",
-    href: "tel:+998901234567",
+    value: "+998 90 973-30-90",
+    href: "tel:+998909733090",
   },
   {
     icon: (
@@ -46,8 +46,8 @@ const contactItems = [
       </svg>
     ),
     label: "WhatsApp",
-    value: "+998 90 123-45-67",
-    href: "https://wa.me/998901234567",
+    value: "+998 90 973-30-90",
+    href: "https://wa.me/998909733090",
   },
   {
     icon: (

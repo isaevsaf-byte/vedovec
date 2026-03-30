@@ -9,14 +9,15 @@ interface ClientLogo {
 }
 
 const fallbackLogos = [
-  "Texnopark",
-  "UzAuto",
-  "Hamkorbank",
-  "Aloka Group",
-  "Silk Way",
-  "Norma",
-  "Uzcard",
-  "Aloqa Bank",
+  "DANONE",
+  "FERRERO",
+  "РУСАГРО",
+  "DOSHIRAK",
+  "DILMAH",
+  "SPLAT",
+  "MARS",
+  "INFAPRIM",
+  "HAVAS",
 ];
 
 interface ClientLogosProps {

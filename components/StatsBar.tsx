@@ -9,9 +9,9 @@ interface Stat {
 }
 
 const defaultStats: Stat[] = [
-  { number: "5", label: "лет на рынке" },
-  { number: "500", label: "клиентов обслужено" },
-  { number: "98", label: "% оформлений с первого раза" },
+  { number: "7", label: "лет на рынке" },
+  { number: "2000", label: "деклараций оформлено" },
+  { number: "12", label: "специалистов в команде" },
   { number: "24/7", label: "поддержка клиентов" },
 ];
 

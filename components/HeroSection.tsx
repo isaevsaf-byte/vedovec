@@ -29,7 +29,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 text-accent-light rounded-full px-4 py-1.5 text-sm font-medium mb-8"
           >
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            Таможенный брокер в Узбекистане
+            Таможенный брокер · Ташкент · с 2019 года
           </motion.div>
 
           <motion.h1
@@ -38,8 +38,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
           >
-            Таможенные услуги{" "}
-            <span className="text-accent">для вашего бизнеса</span>
+            Надёжный партнёр{" "}
+            <span className="text-accent">в сфере ВЭД и таможенного оформления</span>
           </motion.h1>
 
           <motion.p
@@ -48,9 +48,9 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl"
           >
-            Vedovec — надёжный партнёр для импорта и экспорта в Узбекистане.
-            Берём на себя весь таможенный процесс, чтобы ваш товар прошёл
-            границу быстро, законно и без переплат.
+            Оформляем таможенные грузовые декларации любой сложности, ведём
+            консультации по ВЭД и логистике, готовим полный пакет документов —
+            чтобы ваш товар пересёк границу быстро, законно и без переплат.
           </motion.p>
 
           <motion.div
@@ -60,7 +60,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="tel:+998901234567"
+              href="tel:+998909733090"
               className="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-accent-dark transition-colors duration-200"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-12 flex flex-wrap gap-6 text-slate-400 text-sm"
           >
-            {["Лицензированный брокер", "Работаем с 2019 года", "Консультация бесплатно"].map(
+            {["Лицензированный брокер", "2000+ деклараций в 2025 году", "Консультация бесплатно"].map(
               (badge) => (
                 <div key={badge} className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
