@@ -140,5 +140,24 @@
     "contacts": "Aloqa",
     "rights": "Barcha huquqlar himoyalangan.",
     "tagline": "O'zbekistonda bojxona brokeri"
-  }
+  },
+  "fallbackServices": [
+    { "title": "Import va eksport bojxona rasmiylashtiruvi", "description": "Har qanday murakkablikdagi bojxona yuk deklaratsiyalari — FMCGdan sanoat uskunalarigacha. 2025 yilda 2000 dan ortiq deklaratsiya.", "duration": "1–3 ish kuni", "icon": "import" },
+    { "title": "TFD va logistika bo'yicha maslahatlar", "description": "Bojxona qonunchiligi bo'yicha savollaringizni hal qilamiz, yetkazib berish marshrutini va bojxona yukini optimallashtiramiz. Birinchi maslahat bepul.", "duration": "Murojaat kunida", "icon": "consult" },
+    { "title": "To'liq hujjatlar to'plamini tayyorlash", "description": "Bojxona rasmiylashtiruvi uchun barcha hujjatlarni tayyorlaymiz: shartnomalar, invoyslar, qadoqlash ro'yxatlari, kelib chiqish sertifikatlari va ruxsatnomalar.", "duration": "1–2 ish kuni", "icon": "classify" },
+    { "title": "Sertifikatsiya va ruxsat berish tartiblari", "description": "Muvofiqlik sertifikatlari, sanitariya va fitosanitariya ruxsatnomalarini olish. Akkreditatsiyalangan organlar bilan ishlaymiz.", "duration": "3–10 ish kuni", "icon": "cert" },
+    { "title": "VIQ maqomini olish", "description": "Kompaniyalarga vakolatli iqtisodiy operator maqomini olishda yordam beramiz. Allaqachon 2 kompaniyani to'liq jarayon orqali kuzatdik.", "duration": "Kelishuv bo'yicha", "icon": "export" },
+    { "title": "Yirik mijozlar uchun «kalit tayyor» yechimlar", "description": "Dastlabki maslahatdan bitimni to'liq kuzatishgacha kompleks yondashuv. Shaxsiy menejer va ustuvor ishlov berish.", "duration": "Individual", "icon": "warehouse" }
+  ],
+  "fallbackCases": [
+    { "title": "To'qimachilik fabrikasi uchun uskunalarni rasmiylashtirish", "client_industry": "To'qimachilik sanoati", "challenge": "Turkiyadan noto'g'ri TN VED tasnifi bilan ixtisoslashtirilgan to'quv uskunalarini import qilish.", "result": "Bojxona to'lovlarida 15% tejamkorlik, 5 kun o'rniga 2 kunda rasmiylashtirish.", "tags": ["Import", "Uskuna", "Turkiya"] },
+    { "title": "BAA ga quritilgan mevalar eksporti", "client_industry": "Agrosanoat majmuasi", "challenge": "Murakkab fitosanitariya sertifikatsiyasi, BAA ning arab tilidagi hujjatlar va belgilash talablari.", "result": "Barcha ruxsatnomalar olindi, yuk o'z vaqtida jo'natildi, mijoz uzoq muddatli shartnoma tuzdi.", "tags": ["Eksport", "Agro", "BAA"] },
+    { "title": "Xitoydan muntazam elektronika importi", "client_industry": "Chakana savdo", "challenge": "Iste'mol elektronikasini muntazam yetkazib berishni tashkil etish, bojxonadagi to'xtab qolishni minimallashtirish.", "result": "24 soatlik rasmiylashtirish kafolati bilan jarayon yo'lga qo'yildi, operatsion xarajatlar 20% ga kamaydi.", "tags": ["Import", "Elektronika", "Xitoy"] }
+  ],
+  "fallbackStats": [
+    { "number": "7", "label": "yil bozorda" },
+    { "number": "2000", "label": "deklaratsiya rasmiylashtirildi" },
+    { "number": "12", "label": "mutaxassis jamoada" },
+    { "number": "24/7", "label": "mijozlarga qo'llab-quvvatlash" }
+  ]
 }

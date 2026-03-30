@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 interface Service {
   _id: string;
@@ -12,57 +12,6 @@ interface Service {
   icon?: string;
   slug?: { current: string };
 }
-
-const fallbackServices: Service[] = [
-  {
-    _id: "1",
-    title: "Таможенное оформление импорта и экспорта",
-    description:
-      "Оформление грузовых таможенных деклараций любой сложности — от FMCG до промышленного оборудования. Более 2000 деклараций в 2025 году.",
-    duration: "1–3 рабочих дня",
-    icon: "import",
-  },
-  {
-    _id: "2",
-    title: "Консультации по ВЭД и логистике",
-    description:
-      "Разбираем ваш вопрос по таможенному законодательству, оптимизируем маршрут доставки и таможенную нагрузку. Первая консультация — бесплатно.",
-    duration: "В день обращения",
-    icon: "consult",
-  },
-  {
-    _id: "3",
-    title: "Подготовка полного пакета документов",
-    description:
-      "Готовим весь пакет для таможенного оформления: контракты, инвойсы, упаковочные листы, сертификаты происхождения и разрешительные документы.",
-    duration: "1–2 рабочих дня",
-    icon: "classify",
-  },
-  {
-    _id: "4",
-    title: "Сертификация и разрешительные процедуры",
-    description:
-      "Получение сертификатов соответствия, санитарных и фитосанитарных разрешений. Работаем с аккредитованными органами.",
-    duration: "3–10 рабочих дней",
-    icon: "cert",
-  },
-  {
-    _id: "5",
-    title: "Получение статуса УЭО",
-    description:
-      "Помогаем компаниям получить статус уполномоченного экономического оператора. Сопроводили уже 2 компании через полный процесс.",
-    duration: "По согласованию",
-    icon: "export",
-  },
-  {
-    _id: "6",
-    title: "Решения «под ключ» для крупных клиентов",
-    description:
-      "Комплексный подход от первичной консультации до полного сопровождения сделки. Персональный менеджер и приоритетная обработка.",
-    duration: "Индивидуально",
-    icon: "warehouse",
-  },
-];
 
 const iconMap: Record<string, React.ReactNode> = {
   import: (
@@ -103,7 +52,11 @@ interface ServicesGridProps {
 }
 
 export default function ServicesGrid({ services }: ServicesGridProps) {
-  const data = services && services.length > 0 ? services : fallbackServices;
+  const t = useTranslations();
+  const fallback = t.raw("fallbackServices") as Service[];
+  const data = services && services.length > 0 ? services : fallback.map((s, i) => ({ ...s, _id: String(i + 1) }));
+  const durationLabel = t("services.duration");
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -127,7 +80,7 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Срок: {service.duration}
+              {durationLabel}: {service.duration}
             </div>
           )}
         </motion.div>

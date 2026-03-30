@@ -1,9 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { Link, useRouter, usePathname } from "@/lib/navigation";
 
 const LOCALES = [
   { code: "ru", label: "RU" },
@@ -26,26 +25,15 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: "/", label: t("home") },
-    { href: "/services", label: t("services") },
-    { href: "/cases", label: t("cases") },
-    { href: "/about", label: t("about") },
-    { href: "/contacts", label: t("contacts") },
+    { href: "/" as const, label: t("home") },
+    { href: "/services" as const, label: t("services") },
+    { href: "/cases" as const, label: t("cases") },
+    { href: "/about" as const, label: t("about") },
+    { href: "/contacts" as const, label: t("contacts") },
   ];
 
   function switchLocale(newLocale: string) {
-    // Replace locale prefix in pathname
-    const segments = pathname.split("/");
-    const locales = ["ru", "uz", "en"];
-
-    if (locales.includes(segments[1])) {
-      segments[1] = newLocale === "ru" ? "" : newLocale;
-    } else {
-      segments.splice(1, 0, newLocale === "ru" ? "" : newLocale);
-    }
-
-    const newPath = segments.filter(Boolean).join("/") || "/";
-    router.push(newLocale === "ru" ? `/${newPath}`.replace("//", "/") : `/${newLocale}${newPath === "/" ? "" : "/" + newPath}`);
+    router.replace(pathname, { locale: newLocale });
   }
 
   return (
@@ -114,7 +102,7 @@ export default function Header() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
-            aria-label="Меню"
+            aria-label="Menu"
           >
             <div className="w-6 flex flex-col gap-1.5">
               <span className={`block h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
