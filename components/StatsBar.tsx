@@ -2,18 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface Stat {
   number: string;
   label: string;
 }
-
-const defaultStats: Stat[] = [
-  { number: "7", label: "лет на рынке" },
-  { number: "2000", label: "деклараций оформлено" },
-  { number: "12", label: "специалистов в команде" },
-  { number: "24/7", label: "поддержка клиентов" },
-];
 
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -54,7 +48,10 @@ interface StatsBarProps {
 }
 
 export default function StatsBar({ stats }: StatsBarProps) {
-  const data = stats && stats.length > 0 ? stats : defaultStats;
+  const t = useTranslations();
+  const fallback = t.raw("fallbackStats") as Stat[];
+  const data = stats && stats.length > 0 ? stats : fallback;
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 

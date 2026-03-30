@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/lib/navigation";
 
 interface CaseStudy {
   _id: string;
@@ -15,41 +16,20 @@ interface CaseStudy {
   tags?: string[];
 }
 
-const fallbackCases: CaseStudy[] = [
-  {
-    _id: "1",
-    title: "Оформление оборудования для текстильной фабрики",
-    client_industry: "Текстильная промышленность",
-    challenge: "Импорт специализированного ткацкого оборудования из Турции с нестандартной классификацией ТН ВЭД.",
-    result: "Сэкономлено 15% на таможенных пошлинах, оформление за 2 дня вместо планируемых 5.",
-    tags: ["Импорт", "Оборудование", "Турция"],
-  },
-  {
-    _id: "2",
-    title: "Экспорт сухофруктов в ОАЭ",
-    client_industry: "Агропромышленный комплекс",
-    challenge: "Сложная фитосанитарная сертификация, требования ОАЭ к маркировке и документации на арабском языке.",
-    result: "Получены все разрешительные документы, груз отправлен в срок, клиент заключил долгосрочный контракт.",
-    tags: ["Экспорт", "Агро", "ОАЭ"],
-  },
-  {
-    _id: "3",
-    title: "Регулярный импорт электроники из Китая",
-    client_industry: "Розничная торговля",
-    challenge: "Организация регулярных поставок потребительской электроники, минимизация простоев товара на таможне.",
-    result: "Выстроен процесс с гарантией оформления за 24 часа, снижены операционные расходы на 20%.",
-    tags: ["Импорт", "Электроника", "Китай"],
-  },
-];
-
 interface CasesGridProps {
   cases?: CaseStudy[];
   preview?: boolean;
 }
 
 export default function CasesGrid({ cases, preview = false }: CasesGridProps) {
-  const data = cases && cases.length > 0 ? cases : fallbackCases;
+  const t = useTranslations();
+  const fallback = t.raw("fallbackCases") as CaseStudy[];
+  const data = cases && cases.length > 0 ? cases : fallback.map((c, i) => ({ ...c, _id: String(i + 1) }));
   const displayData = preview ? data.slice(0, 3) : data;
+  const taskLabel = t("cases.taskLabel");
+  const resultLabel = t("cases.resultLabel");
+  const allBtn = t("cases.allBtn");
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -75,13 +55,13 @@ export default function CasesGrid({ cases, preview = false }: CasesGridProps) {
               </h3>
               {item.challenge && (
                 <div className="mb-3">
-                  <p className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">Задача</p>
+                  <p className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">{taskLabel}</p>
                   <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{item.challenge}</p>
                 </div>
               )}
               {item.result && (
                 <div>
-                  <p className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">Результат</p>
+                  <p className="text-xs font-medium text-slate-400 uppercase tracking-wide mb-1">{resultLabel}</p>
                   <p className="text-sm text-slate-700 font-medium leading-relaxed">{item.result}</p>
                 </div>
               )}
@@ -108,7 +88,7 @@ export default function CasesGrid({ cases, preview = false }: CasesGridProps) {
             href="/cases"
             className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3 rounded-xl font-semibold hover:bg-primary hover:text-white transition-colors duration-200"
           >
-            Все кейсы
+            {allBtn}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
