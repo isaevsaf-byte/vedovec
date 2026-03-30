@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface FormData {
   name: string;
@@ -14,18 +15,12 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ compact = false }: ContactFormProps) {
-  const [form, setForm] = useState<FormData>({
-    name: "",
-    company: "",
-    phone: "",
-    message: "",
-  });
+  const t = useTranslations("form");
+  const [form, setForm] = useState<FormData>({ name: "", company: "", phone: "", message: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -40,17 +35,15 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || "Ошибка отправки");
+        throw new Error(data.error || t("errorFallback"));
       }
-
       setStatus("success");
       setForm({ name: "", company: "", phone: "", message: "" });
     } catch (err) {
       setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Произошла ошибка");
+      setErrorMsg(err instanceof Error ? err.message : t("errorFallback"));
     }
   };
 
@@ -62,15 +55,13 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-slate-800 mb-2">Заявка отправлена!</h3>
-        <p className="text-slate-500">
-          Мы свяжемся с вами в течение 30 минут в рабочее время.
-        </p>
+        <h3 className="text-xl font-bold text-slate-800 mb-2">{t("successTitle")}</h3>
+        <p className="text-slate-500">{t("successText")}</p>
         <button
           onClick={() => setStatus("idle")}
           className="mt-6 text-accent hover:text-accent-dark font-medium transition-colors"
         >
-          Отправить ещё одну заявку
+          {t("successAgain")}
         </button>
       </div>
     );
@@ -81,7 +72,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
       <div className={compact ? "grid grid-cols-1 sm:grid-cols-2 gap-4" : "space-y-4"}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
-            Ваше имя <span className="text-red-500">*</span>
+            {t("name")} <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
@@ -90,13 +81,13 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             required
             value={form.name}
             onChange={handleChange}
-            placeholder="Иван Иванов"
+            placeholder={t("namePlaceholder")}
             className="w-full px-4 py-3 border border-slate-300 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors"
           />
         </div>
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">
-            Компания
+            {t("company")}
           </label>
           <input
             type="text"
@@ -104,7 +95,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             name="company"
             value={form.company}
             onChange={handleChange}
-            placeholder="ООО «Ваша Компания»"
+            placeholder={t("companyPlaceholder")}
             className="w-full px-4 py-3 border border-slate-300 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors"
           />
         </div>
@@ -112,7 +103,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">
-          Телефон <span className="text-red-500">*</span>
+          {t("phone")} <span className="text-red-500">*</span>
         </label>
         <input
           type="tel"
@@ -121,14 +112,14 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
           required
           value={form.phone}
           onChange={handleChange}
-          placeholder="+998 90 123-45-67"
+          placeholder={t("phonePlaceholder")}
           className="w-full px-4 py-3 border border-slate-300 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors"
         />
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
-          Сообщение
+          {t("message")}
         </label>
         <textarea
           id="message"
@@ -136,13 +127,13 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
           rows={compact ? 3 : 5}
           value={form.message}
           onChange={handleChange}
-          placeholder="Расскажите о вашей задаче: что нужно оформить, откуда/куда, примерный объём..."
+          placeholder={t("messagePlaceholder")}
           className="w-full px-4 py-3 border border-slate-300 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-colors resize-none"
         />
       </div>
 
       {status === "error" && (
-        <p className="text-red-600 text-sm">{errorMsg || "Произошла ошибка. Попробуйте позже."}</p>
+        <p className="text-red-600 text-sm">{errorMsg}</p>
       )}
 
       <button
@@ -156,16 +147,14 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
             </svg>
-            Отправка...
+            {t("sending")}
           </>
         ) : (
-          "Отправить заявку"
+          t("submit")
         )}
       </button>
 
-      <p className="text-xs text-slate-400 text-center">
-        Нажимая «Отправить заявку», вы соглашаетесь на обработку персональных данных
-      </p>
+      <p className="text-xs text-slate-400 text-center">{t("privacy")}</p>
     </form>
   );
 }

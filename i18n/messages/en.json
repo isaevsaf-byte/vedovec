@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "cases": "Cases",
+    "about": "About",
+    "contacts": "Contact",
+    "phone": "+998 90 973-30-90",
+    "cta": "Submit Request"
+  },
+  "hero": {
+    "badge": "Customs Broker · Tashkent · since 2019",
+    "headline": "Reliable Partner",
+    "headlineAccent": "in Foreign Trade & Customs Clearance",
+    "description": "We handle customs declarations of any complexity, provide FEA consulting and logistics advice, and prepare a full document package — so your goods cross the border fast, legally, and without overpayments.",
+    "callBtn": "Call Now",
+    "requestBtn": "Submit Request",
+    "badge1": "Licensed Broker",
+    "badge2": "2000+ declarations in 2025",
+    "badge3": "Free consultation"
+  },
+  "stats": {
+    "years": "years on the market",
+    "declarations": "declarations processed",
+    "team": "specialists in the team",
+    "support": "customer support"
+  },
+  "services": {
+    "sectionLabel": "What we do",
+    "title": "Our Services",
+    "subtitle": "Full range of customs services — from consultation to final clearance. We handle all the bureaucratic process.",
+    "allServicesBtn": "All Services",
+    "pageTitle": "Our Services",
+    "pageSubtitle": "Full customs support for importers and exporters in Uzbekistan. We work fast, transparently and within the law.",
+    "processLabel": "How it works",
+    "processTitle": "Work Process",
+    "process": [
+      { "step": "01", "title": "Request", "desc": "You describe the task — we analyze and consult for free." },
+      { "step": "02", "title": "Documents", "desc": "We collect the necessary document package together with you." },
+      { "step": "03", "title": "Clearance", "desc": "We submit the declaration and handle all customs interaction." },
+      { "step": "04", "title": "Release", "desc": "Goods released. You receive all documents and a report." }
+    ],
+    "ctaTitle": "Need help with customs clearance?",
+    "ctaSubtitle": "Submit a request — we'll explain costs and timelines for your task.",
+    "duration": "Duration"
+  },
+  "cases": {
+    "sectionLabel": "Our experience",
+    "title": "Client Cases",
+    "subtitle": "Real tasks we solved for our clients. Concrete results in numbers.",
+    "allBtn": "All Cases",
+    "pageTitle": "Client Cases",
+    "pageSubtitle": "Real tasks and results. See how we resolved complex customs issues for companies across different industries.",
+    "taskLabel": "Challenge",
+    "resultLabel": "Result",
+    "ctaTitle": "Your task will become our next case",
+    "ctaSubtitle": "Tell us about your cargo — we'll propose a solution."
+  },
+  "clients": {
+    "title": "Trusted by leading companies in Uzbekistan"
+  },
+  "contact": {
+    "sectionLabel": "Ready to start?",
+    "title": "Get a Free Consultation",
+    "subtitle": "Tell us about your task — we'll get in touch within 30 minutes and offer the best solution.",
+    "benefit1": "Free initial consultation",
+    "benefit2": "Cost estimate within 1 hour",
+    "benefit3": "Guaranteed clearance timelines",
+    "benefit4": "Personal manager"
+  },
+  "form": {
+    "title": "Submit Request",
+    "name": "Your Name",
+    "namePlaceholder": "John Smith",
+    "company": "Company",
+    "companyPlaceholder": "Your Company LLC",
+    "phone": "Phone",
+    "phonePlaceholder": "+998 90 123-45-67",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your task: what to clear, where from/to, approximate volume...",
+    "submit": "Submit Request",
+    "sending": "Sending...",
+    "successTitle": "Request Submitted!",
+    "successText": "We will contact you within 30 minutes during business hours.",
+    "successAgain": "Submit another request",
+    "required": "Name and phone are required",
+    "errorFallback": "An error occurred. Please try again later.",
+    "privacy": "By clicking Submit Request, you agree to the processing of personal data"
+  },
+  "about": {
+    "sectionLabel": "Our Company",
+    "pageTitle": "About Vedovec",
+    "pageSubtitle": "Reliable partner in foreign trade and customs clearance. Helping businesses access international markets without customs complications since 2019.",
+    "historyLabel": "Our History",
+    "historyTitle": "Founded in 2019 in Tashkent",
+    "p1": "LLC VEDOVEC was founded in 2019 by a team of professionals with experience in foreign trade and customs law. Since then we have processed over 2000 customs cargo declarations in 2025, guided two companies through obtaining Authorized Economic Operator (AEO) status, and supported clients through customs audits.",
+    "p2": "We specialize in FMCG goods — our clients include major distributors for DANONE, FERRERO, RUSAGRO, DOSHIRAK, DILMAH, SPLAT portfolios, as well as official representatives of MARS and INFAPRIM.",
+    "p3": "A comprehensive approach: from initial consultation to full transaction support. Personal manager, responsible and prompt execution.",
+    "stat1": "year founded",
+    "stat2": "declarations in 2025",
+    "stat3": "specialists in team",
+    "stat4": "companies with AEO status",
+    "valuesLabel": "Our Principles",
+    "valuesTitle": "Company Values",
+    "values": [
+      { "icon": "👁", "title": "Transparency", "desc": "No hidden fees. Full report for every operation." },
+      { "icon": "⚡", "title": "Speed", "desc": "We meet agreed deadlines. Guaranteed by contract." },
+      { "icon": "🎓", "title": "Expertise", "desc": "Certified declarants with years of experience." },
+      { "icon": "📞", "title": "24/7 Support", "desc": "Questions arise outside business hours too — we're always available." }
+    ],
+    "teamLabel": "People",
+    "teamTitle": "Our Team",
+    "ctaTitle": "Let's get acquainted?",
+    "ctaSubtitle": "Come for a consultation at our Tashkent office or leave a request — we'll call back at a convenient time."
+  },
+  "contacts": {
+    "sectionLabel": "Get in touch",
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "We respond quickly. Write on Telegram or leave a request — we'll get in touch within 30 minutes.",
+    "infoTitle": "Our Contacts",
+    "formTitle": "Submit Request",
+    "phone": "Phone",
+    "email": "Email",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp",
+    "address": "Address",
+    "addressValue": "Tashkent, Amir Temur St., 1, Office 405",
+    "hoursTitle": "Working Hours",
+    "weekdays": "Monday — Friday",
+    "weekdaysHours": "9:00 — 18:00",
+    "saturday": "Saturday",
+    "saturdayHours": "10:00 — 15:00",
+    "sunday": "Sunday",
+    "sundayClosed": "Day off",
+    "telegram247": "Telegram & WhatsApp — 24/7"
+  },
+  "footer": {
+    "description": "Reliable partner in foreign trade and customs clearance in Tashkent.",
+    "nav": "Navigation",
+    "contacts": "Contacts",
+    "rights": "All rights reserved.",
+    "tagline": "Customs Broker in Uzbekistan"
+  }
+}

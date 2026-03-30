@@ -1,15 +1,19 @@
-import Link from "next/link";
+"use client";
 
-const navLinks = [
-  { href: "/", label: "Главная" },
-  { href: "/services", label: "Услуги" },
-  { href: "/cases", label: "Кейсы" },
-  { href: "/about", label: "О нас" },
-  { href: "/contacts", label: "Контакты" },
-];
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations();
   const year = new Date().getFullYear();
+
+  const navLinks = [
+    { href: "/", label: t("nav.home") },
+    { href: "/services", label: t("nav.services") },
+    { href: "/cases", label: t("nav.cases") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/contacts", label: t("nav.contacts") },
+  ];
 
   return (
     <footer className="bg-primary text-white">
@@ -24,14 +28,13 @@ export default function Footer() {
               <span className="text-xl font-bold">Vedovec</span>
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Профессиональные таможенные услуги для бизнеса в Узбекистане.
-              Надёжный партнёр для вашей внешнеэкономической деятельности.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Nav */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Навигация</h3>
+            <h3 className="font-semibold text-white mb-4">{t("footer.nav")}</h3>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -48,7 +51,7 @@ export default function Footer() {
 
           {/* Contacts */}
           <div>
-            <h3 className="font-semibold text-white mb-4">Контакты</h3>
+            <h3 className="font-semibold text-white mb-4">{t("footer.contacts")}</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
                 <a href="tel:+998909733090" className="hover:text-accent transition-colors">
@@ -60,18 +63,12 @@ export default function Footer() {
                   info@vedovec.uz
                 </a>
               </li>
-              <li>г. Ташкент, ул. Амира Темура, 1</li>
+              <li>{t("contacts.addressValue")}</li>
               <li className="flex gap-3 pt-2">
-                <a
-                  href="https://t.me/vedovec"
-                  className="text-slate-300 hover:text-accent transition-colors font-medium"
-                >
+                <a href="https://t.me/vedovec" className="text-slate-300 hover:text-accent transition-colors font-medium">
                   Telegram
                 </a>
-                <a
-                  href="https://wa.me/998909733090"
-                  className="text-slate-300 hover:text-accent transition-colors font-medium"
-                >
+                <a href="https://wa.me/998909733090" className="text-slate-300 hover:text-accent transition-colors font-medium">
                   WhatsApp
                 </a>
               </li>
@@ -81,11 +78,9 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-slate-400 text-sm">
-            © {year} Vedovec. Все права защищены.
+            © {year} Vedovec. {t("footer.rights")}
           </p>
-          <p className="text-slate-500 text-xs">
-            Таможенный брокер в Узбекистане
-          </p>
+          <p className="text-slate-500 text-xs">{t("footer.tagline")}</p>
         </div>
       </div>
     </footer>

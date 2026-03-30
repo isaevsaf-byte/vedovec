@@ -1,38 +1,23 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://vedovec.uz";
+  const base = "https://vedovec.uz";
+  const locales = ["", "/uz", "/en"];
+  const pages = ["/", "/services", "/cases", "/about", "/contacts"];
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/cases`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contacts`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-  ];
+  const entries: MetadataRoute.Sitemap = [];
+
+  for (const locale of locales) {
+    for (const page of pages) {
+      const path = locale + (page === "/" ? "" : page);
+      entries.push({
+        url: `${base}${path || "/"}`,
+        lastModified: new Date(),
+        changeFrequency: page === "/" || page === "/contacts" ? "weekly" : "monthly",
+        priority: page === "/" ? 1 : page === "/contacts" ? 0.9 : 0.7,
+      });
+    }
+  }
+
+  return entries;
 }

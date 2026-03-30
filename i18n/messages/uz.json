@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "cases": "Ishlar",
+    "about": "Biz haqimizda",
+    "contacts": "Aloqa",
+    "phone": "+998 90 973-30-90",
+    "cta": "Ariza yuborish"
+  },
+  "hero": {
+    "badge": "Bojxona brokeri · Toshkent · 2019 yildan",
+    "headline": "Ishonchli hamkor",
+    "headlineAccent": "TFD va bojxona rasmiylashtirishda",
+    "description": "Har qanday murakkablikdagi bojxona yuk deklaratsiyalarini rasmiylashtiramiz, TFD va logistika bo'yicha maslahatlar beramiz, to'liq hujjatlar to'plamini tayyorlaymiz — tovaringiz chegarani tez, qonuniy va ortiqcha to'lovsiz o'tishi uchun.",
+    "callBtn": "Qo'ng'iroq qilish",
+    "requestBtn": "Ariza yuborish",
+    "badge1": "Litsenziyalangan broker",
+    "badge2": "2025 yilda 2000+ deklaratsiya",
+    "badge3": "Bepul maslahat"
+  },
+  "stats": {
+    "years": "yil bozorda",
+    "declarations": "deklaratsiya rasmiylashtirildi",
+    "team": "mutaxassis jamoada",
+    "support": "mijozlarga qo'llab-quvvatlash"
+  },
+  "services": {
+    "sectionLabel": "Biz nima qilamiz",
+    "title": "Bizning xizmatlarimiz",
+    "subtitle": "Konsultatsiyadan tortib yakuniy rasmiylashtirishgacha to'liq bojxona xizmatlari. Barcha byurokratik jarayonni o'z zimmamizga olamiz.",
+    "allServicesBtn": "Barcha xizmatlar",
+    "pageTitle": "Bizning xizmatlarimiz",
+    "pageSubtitle": "O'zbekistondagi importchilar va eksportchilar uchun to'liq bojxona xizmatlari. Tez, shaffof va qonun doirasida ishlaymiz.",
+    "processLabel": "Qanday ishlaydi",
+    "processTitle": "Ish jarayoni",
+    "process": [
+      { "step": "01", "title": "Ariza", "desc": "Siz vazifani tavsiflaysiz — biz tahlil qilamiz va bepul maslahat beramiz." },
+      { "step": "02", "title": "Hujjatlar", "desc": "Siz bilan birga kerakli hujjatlar to'plamini yig'amiz." },
+      { "step": "03", "title": "Rasmiylashtirish", "desc": "Deklaratsiya topshiramiz, bojxona bilan to'liq muloqot olib boramiz." },
+      { "step": "04", "title": "Chiqarish", "desc": "Tovar chiqarildi. Barcha hujjatlar va hisobotni olasiz." }
+    ],
+    "ctaTitle": "Rasmiylashtirish bo'yicha yordam kerakmi?",
+    "ctaSubtitle": "Ariza qoldiring — vazifangiz uchun narx va muddatlar haqida aytamiz.",
+    "duration": "Muddat"
+  },
+  "cases": {
+    "sectionLabel": "Bizning tajribamiz",
+    "title": "Mijozlar ishlari",
+    "subtitle": "Mijozlarimiz uchun hal qilgan real vazifalar. Raqamlardagi aniq natijalar.",
+    "allBtn": "Barcha ishlar",
+    "pageTitle": "Mijozlar ishlari",
+    "pageSubtitle": "Real vazifalar va natijalar. Turli tarmoqlardagi kompaniyalar uchun murakkab bojxona masalalarini qanday hal qilganimizni ko'ring.",
+    "taskLabel": "Vazifa",
+    "resultLabel": "Natija",
+    "ctaTitle": "Sizning vazifangiz bizning keyingi ishimiz bo'ladi",
+    "ctaSubtitle": "Yukingiz haqida ayting — yechim taklif qilamiz."
+  },
+  "clients": {
+    "title": "O'zbekistonning yetakchi kompaniyalari bizga ishonadi"
+  },
+  "contact": {
+    "sectionLabel": "Boshlashga tayyormisiz?",
+    "title": "Bepul maslahat oling",
+    "subtitle": "Vazifangiz haqida ayting — 30 daqiqa ichida bog'lanamiz va eng yaxshi yechimni taklif qilamiz.",
+    "benefit1": "Bepul dastlabki maslahat",
+    "benefit2": "1 soat ichida narx hisob-kitobi",
+    "benefit3": "Rasmiylashtirish muddatlariga kafolat",
+    "benefit4": "Shaxsiy menejer"
+  },
+  "form": {
+    "title": "Ariza yuborish",
+    "name": "Ismingiz",
+    "namePlaceholder": "Ismoil Karimov",
+    "company": "Kompaniya",
+    "companyPlaceholder": "\"Sizning Kompaniyangiz\" MChJ",
+    "phone": "Telefon",
+    "phonePlaceholder": "+998 90 123-45-67",
+    "message": "Xabar",
+    "messagePlaceholder": "Vazifangiz haqida ayting: nima rasmiylashtirish kerak, qayerdan/qayerga, taxminiy hajm...",
+    "submit": "Ariza yuborish",
+    "sending": "Yuborilmoqda...",
+    "successTitle": "Ariza yuborildi!",
+    "successText": "Ish vaqtida 30 daqiqa ichida siz bilan bog'lanamiz.",
+    "successAgain": "Yana bir ariza yuborish",
+    "required": "Ism va telefon majburiy",
+    "errorFallback": "Xato yuz berdi. Keyinroq urinib ko'ring.",
+    "privacy": "«Ariza yuborish»ni bosish orqali shaxsiy ma'lumotlarni qayta ishlashga rozilik bildirasiz"
+  },
+  "about": {
+    "sectionLabel": "Bizning kompaniyamiz",
+    "pageTitle": "Vedovec haqida",
+    "pageSubtitle": "TFD va bojxona rasmiylashtirishda ishonchli hamkor. 2019 yildan beri biznesga xalqaro bozorlarga bojxona muammolarsiz kirish imkonini beramiz.",
+    "historyLabel": "Bizning tariximiz",
+    "historyTitle": "2019 yilda Toshkentda tashkil etilgan",
+    "p1": "«VEDOVEC» MChJ 2019 yilda TFD va bojxona qonunchiligida tajribaga ega mutaxassislar jamoasi tomonidan tashkil etilgan. Shu vaqt ichida 2025 yilda 2000 dan ortiq bojxona yuk deklaratsiyasini rasmiylashtiirdik, ikki kompaniyaga vakolatli iqtisodiy operator (VIQ) maqomini olishda hamrohlik qildik va mijozlarni bojxona auditidan o'tkazdik.",
+    "p2": "FMCG segmenti tovarlarida ixtisoslashamiz — mijozlarimiz orasida DANONE, FERRERO, RUSAGRO, DOSHIRAK, DILMAH, SPLAT portfellarining yirik distribyutorlari, shuningdek MARS va INFAPRIM rasmiy vakilliklari bor.",
+    "p3": "Kompleks yondashuv: dastlabki maslahatdan to bitimni to'liq kuzatishgacha. Shaxsiy menejer, mas'uliyatli va operativ ijro.",
+    "stat1": "tashkil etilgan yil",
+    "stat2": "2025 yildagi deklaratsiyalar",
+    "stat3": "jamoada mutaxassislar",
+    "stat4": "VIQ maqomiga ega kompaniyalar",
+    "valuesLabel": "Bizning tamoyillarimiz",
+    "valuesTitle": "Kompaniya qadriyatlari",
+    "values": [
+      { "icon": "👁", "title": "Shaffoflik", "desc": "Yashirin to'lovlar yo'q. Har bir operatsiya bo'yicha to'liq hisobot." },
+      { "icon": "⚡", "title": "Tezlik", "desc": "Kelishilgan muddatda bajaramiz. Shartnoma bilan kafolatlaymiz." },
+      { "icon": "🎓", "title": "Tajriba", "desc": "Ko'p yillik tajribaga ega sertifikatlangan deklarantlar." },
+      { "icon": "📞", "title": "24/7 qo'llab-quvvatlash", "desc": "Savollar ish vaqtidan tashqari ham paydo bo'ladi — biz doim aloqadamiz." }
+    ],
+    "teamLabel": "Odamlar",
+    "teamTitle": "Bizning jamoamiz",
+    "ctaTitle": "Yaqindan tanishamizmi?",
+    "ctaSubtitle": "Toshkentdagi ofisimizga konsultatsiyaga keling yoki ariza qoldiring — qulay vaqtda qayta qo'ng'iroq qilamiz."
+  },
+  "contacts": {
+    "sectionLabel": "Biz bilan bog'laning",
+    "pageTitle": "Aloqa",
+    "pageSubtitle": "Biz tez javob beramiz. Telegramga yozing yoki ariza qoldiring — 30 daqiqa ichida bog'lanamiz.",
+    "infoTitle": "Bizning kontaktlarimiz",
+    "formTitle": "Ariza yuborish",
+    "phone": "Telefon",
+    "email": "Email",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp",
+    "address": "Manzil",
+    "addressValue": "Toshkent, Amir Temur ko'chasi, 1, 405-ofis",
+    "hoursTitle": "Ish vaqti",
+    "weekdays": "Dushanba — Juma",
+    "weekdaysHours": "9:00 — 18:00",
+    "saturday": "Shanba",
+    "saturdayHours": "10:00 — 15:00",
+    "sunday": "Yakshanba",
+    "sundayClosed": "Dam olish kuni",
+    "telegram247": "Telegram va WhatsApp — 24/7"
+  },
+  "footer": {
+    "description": "Toshkentda TFD va bojxona rasmiylashtirishda ishonchli hamkor.",
+    "nav": "Navigatsiya",
+    "contacts": "Aloqa",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "tagline": "O'zbekistonda bojxona brokeri"
+  }
+}
