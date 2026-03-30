@@ -3,5 +3,5 @@ import { defineRouting } from "next-intl/routing";
 export const routing = defineRouting({
   locales: ["ru", "uz", "en"],
   defaultLocale: "ru",
-  localePrefix: "as-needed", // /ru → /, /uz → /uz, /en → /en
+  localePrefix: "always", // /ru, /uz, /en — always explicit, middleware redirects / → /ru
 });
