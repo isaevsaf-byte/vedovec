@@ -1,32 +1,30 @@
 <svg viewBox="0 0 460 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="#003399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <g stroke="#003399" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
 
-    <!-- V (first): clean V, no internal bars -->
+    <!-- V (first): clean V shape -->
     <polyline points="4,4 32,68 60,4"/>
 
-    <!-- E (first) -->
-    <line x1="74"  y1="4"  x2="74"  y2="68"/>
-    <line x1="74"  y1="4"  x2="122" y2="4"/>
-    <line x1="74"  y1="36" x2="118" y2="36"/>
-    <line x1="74"  y1="68" x2="122" y2="68"/>
+    <!-- E (first): three horizontal lines only, NO vertical spine -->
+    <line x1="74"  y1="4"  x2="126" y2="4"/>
+    <line x1="74"  y1="36" x2="122" y2="36"/>
+    <line x1="74"  y1="68" x2="126" y2="68"/>
 
-    <!-- D -->
-    <path d="M 136,4 L 136,68 C 178,68 200,55 200,36 C 200,17 178,4 136,4 Z"/>
+    <!-- D: flat left spine + smooth right arc -->
+    <path d="M 140,4 L 140,68 C 182,68 206,54 206,36 C 206,18 182,4 140,4 Z"/>
 
-    <!-- O -->
-    <rect x="214" y="4" width="60" height="64" rx="30"/>
+    <!-- O: rounded rectangle outline -->
+    <rect x="220" y="4" width="62" height="64" rx="30"/>
 
-    <!-- V (second): clean V, no internal bars -->
-    <polyline points="288,4 316,68 344,4"/>
+    <!-- V (second): same as first -->
+    <polyline points="296,4 324,68 352,4"/>
 
-    <!-- E (second) -->
-    <line x1="358" y1="4"  x2="358" y2="68"/>
-    <line x1="358" y1="4"  x2="406" y2="4"/>
-    <line x1="358" y1="36" x2="402" y2="36"/>
-    <line x1="358" y1="68" x2="406" y2="68"/>
+    <!-- E (second): three horizontal lines only, NO vertical spine -->
+    <line x1="366" y1="4"  x2="418" y2="4"/>
+    <line x1="366" y1="36" x2="414" y2="36"/>
+    <line x1="366" y1="68" x2="418" y2="68"/>
 
-    <!-- C -->
-    <path d="M 448,16 A 30,32 0 1 0 448,56" stroke-linecap="round"/>
+    <!-- C: arc open on right -->
+    <path d="M 446,16 A 30,32 0 1 0 446,56" stroke-linecap="round"/>
 
   </g>
 </svg>
