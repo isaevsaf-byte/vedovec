@@ -13,11 +13,11 @@
     "headline": "Reliable Partner",
     "headlineAccent": "in Foreign Trade & Customs Clearance",
     "description": "We handle customs declarations of any complexity, provide FEA consulting and logistics advice, and prepare a full document package — so your goods cross the border fast, legally, and without overpayments.",
-    "callBtn": "Call Now",
     "requestBtn": "Submit Request",
     "badge1": "Licensed Broker",
     "badge2": "2000+ declarations in 2025",
-    "badge3": "Free consultation"
+    "badge3": "Free consultation",
+    "servicesBtn": "Our Services"
   },
   "stats": {
     "years": "years on the market",
@@ -35,10 +35,26 @@
     "processLabel": "How it works",
     "processTitle": "Work Process",
     "process": [
-      { "step": "01", "title": "Request", "desc": "You describe the task — we analyze and consult for free." },
-      { "step": "02", "title": "Documents", "desc": "We collect the necessary document package together with you." },
-      { "step": "03", "title": "Clearance", "desc": "We submit the declaration and handle all customs interaction." },
-      { "step": "04", "title": "Release", "desc": "Goods released. You receive all documents and a report." }
+      {
+        "step": "01",
+        "title": "Request",
+        "desc": "You describe the task — we analyze and consult for free."
+      },
+      {
+        "step": "02",
+        "title": "Documents",
+        "desc": "We collect the necessary document package together with you."
+      },
+      {
+        "step": "03",
+        "title": "Clearance",
+        "desc": "We submit the declaration and handle all customs interaction."
+      },
+      {
+        "step": "04",
+        "title": "Release",
+        "desc": "Goods released. You receive all documents and a report."
+      }
     ],
     "ctaTitle": "Need help with customs clearance?",
     "ctaSubtitle": "Submit a request — we'll explain costs and timelines for your task.",
@@ -103,10 +119,26 @@
     "valuesLabel": "Our Principles",
     "valuesTitle": "Company Values",
     "values": [
-      { "icon": "👁", "title": "Transparency", "desc": "No hidden fees. Full report for every operation." },
-      { "icon": "⚡", "title": "Speed", "desc": "We meet agreed deadlines. Guaranteed by contract." },
-      { "icon": "🎓", "title": "Expertise", "desc": "Certified declarants with years of experience." },
-      { "icon": "📞", "title": "24/7 Support", "desc": "Questions arise outside business hours too — we're always available." }
+      {
+        "icon": "👁",
+        "title": "Transparency",
+        "desc": "No hidden fees. Full report for every operation."
+      },
+      {
+        "icon": "⚡",
+        "title": "Speed",
+        "desc": "We meet agreed deadlines. Guaranteed by contract."
+      },
+      {
+        "icon": "🎓",
+        "title": "Expertise",
+        "desc": "Certified declarants with years of experience."
+      },
+      {
+        "icon": "📞",
+        "title": "24/7 Support",
+        "desc": "Questions arise outside business hours too — we're always available."
+      }
     ],
     "teamLabel": "People",
     "teamTitle": "Our Team",
@@ -142,22 +174,119 @@
     "tagline": "Customs Broker in Uzbekistan"
   },
   "fallbackServices": [
-    { "title": "Import & Export Customs Clearance", "description": "Customs declarations of any complexity — from FMCG to industrial equipment. Over 2000 declarations in 2025.", "duration": "1–3 business days", "icon": "import" },
-    { "title": "FEA & Logistics Consulting", "description": "We resolve your customs law questions, optimize your delivery route and customs burden. First consultation is free.", "duration": "Same day", "icon": "consult" },
-    { "title": "Full Document Package Preparation", "description": "We prepare all documents for customs clearance: contracts, invoices, packing lists, certificates of origin and permits.", "duration": "1–2 business days", "icon": "classify" },
-    { "title": "Certification & Permits", "description": "Obtaining conformity certificates, sanitary and phytosanitary permits. We work with accredited bodies.", "duration": "3–10 business days", "icon": "cert" },
-    { "title": "AEO Status Registration", "description": "We help companies obtain Authorized Economic Operator status. We have already guided 2 companies through the full process.", "duration": "By agreement", "icon": "export" },
-    { "title": "Turnkey Solutions for Large Clients", "description": "Comprehensive approach from initial consultation to full transaction support. Personal manager and priority processing.", "duration": "Individual", "icon": "warehouse" }
+    {
+      "title": "Import & Export Customs Clearance",
+      "description": "Customs declarations of any complexity — from FMCG to industrial equipment. Over 2000 declarations in 2025.",
+      "duration": "1–3 business days",
+      "icon": "import"
+    },
+    {
+      "title": "FEA & Logistics Consulting",
+      "description": "We resolve your customs law questions, optimize your delivery route and customs burden. First consultation is free.",
+      "duration": "Same day",
+      "icon": "consult"
+    },
+    {
+      "title": "Full Document Package Preparation",
+      "description": "We prepare all documents for customs clearance: contracts, invoices, packing lists, certificates of origin and permits.",
+      "duration": "1–2 business days",
+      "icon": "classify"
+    },
+    {
+      "title": "Certification & Permits",
+      "description": "Obtaining conformity certificates, sanitary and phytosanitary permits. We work with accredited bodies.",
+      "duration": "3–10 business days",
+      "icon": "cert"
+    },
+    {
+      "title": "AEO Status Registration",
+      "description": "We help companies obtain Authorized Economic Operator status. We have already guided 2 companies through the full process.",
+      "duration": "By agreement",
+      "icon": "export"
+    },
+    {
+      "title": "Turnkey Solutions for Large Clients",
+      "description": "Comprehensive approach from initial consultation to full transaction support. Personal manager and priority processing.",
+      "duration": "Individual",
+      "icon": "warehouse"
+    }
   ],
   "fallbackCases": [
-    { "title": "Customs clearance of equipment for a textile factory", "client_industry": "Textile Industry", "challenge": "Import of specialised weaving equipment from Turkey with non-standard HS code classification.", "result": "Saved 15% on customs duties, clearance in 2 days instead of the planned 5.", "tags": ["Import", "Equipment", "Turkey"] },
-    { "title": "Export of dried fruits to UAE", "client_industry": "Agro-industrial sector", "challenge": "Complex phytosanitary certification, UAE requirements for labelling and Arabic-language documentation.", "result": "All permits obtained, cargo shipped on time, client signed a long-term contract.", "tags": ["Export", "Agro", "UAE"] },
-    { "title": "Regular electronics imports from China", "client_industry": "Retail", "challenge": "Organising regular consumer electronics shipments, minimising customs downtime.", "result": "Process built with a 24-hour clearance guarantee, operating costs reduced by 20%.", "tags": ["Import", "Electronics", "China"] }
+    {
+      "title": "Customs clearance of equipment for a textile factory",
+      "client_industry": "Textile Industry",
+      "challenge": "Import of specialised weaving equipment from Turkey with non-standard HS code classification.",
+      "result": "Saved 15% on customs duties, clearance in 2 days instead of the planned 5.",
+      "tags": [
+        "Import",
+        "Equipment",
+        "Turkey"
+      ]
+    },
+    {
+      "title": "Export of dried fruits to UAE",
+      "client_industry": "Agro-industrial sector",
+      "challenge": "Complex phytosanitary certification, UAE requirements for labelling and Arabic-language documentation.",
+      "result": "All permits obtained, cargo shipped on time, client signed a long-term contract.",
+      "tags": [
+        "Export",
+        "Agro",
+        "UAE"
+      ]
+    },
+    {
+      "title": "Regular electronics imports from China",
+      "client_industry": "Retail",
+      "challenge": "Organising regular consumer electronics shipments, minimising customs downtime.",
+      "result": "Process built with a 24-hour clearance guarantee, operating costs reduced by 20%.",
+      "tags": [
+        "Import",
+        "Electronics",
+        "China"
+      ]
+    }
   ],
   "fallbackStats": [
-    { "number": "7", "label": "years on the market" },
-    { "number": "2000", "label": "declarations processed" },
-    { "number": "12", "label": "specialists in the team" },
-    { "number": "24/7", "label": "customer support" }
+    {
+      "number": "7",
+      "label": "years on the market"
+    },
+    {
+      "number": "2000",
+      "label": "declarations processed"
+    },
+    {
+      "number": "12",
+      "label": "specialists in the team"
+    },
+    {
+      "number": "24/7",
+      "label": "customer support"
+    }
+  ],
+  "testimonials": {
+    "sectionLabel": "Client Reviews",
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by leading importers and exporters in Uzbekistan"
+  },
+  "fallbackTestimonials": [
+    {
+      "author_name": "Ruslan Karimov",
+      "author_role": "Logistics Director",
+      "company": "Major FMCG Distributor",
+      "text": "We have been working with Vedovec for over two years. Not a single customs delay during this time. The team is always reachable and resolves issues quickly."
+    },
+    {
+      "author_name": "Nilufar Yusupova",
+      "author_role": "General Director",
+      "company": "Equipment Importer",
+      "text": "We approached with non-standard equipment classification. Vedovec resolved it in 2 days and helped save on customs duties."
+    },
+    {
+      "author_name": "Sanjar Mirzaev",
+      "author_role": "Owner",
+      "company": "Agricultural Export",
+      "text": "They helped with phytosanitary certification for export to UAE. All documents were prepared precisely, the cargo was shipped on time."
+    }
   ]
 }

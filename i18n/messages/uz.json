@@ -13,11 +13,11 @@
     "headline": "Ishonchli hamkor",
     "headlineAccent": "TFD va bojxona rasmiylashtirishda",
     "description": "Har qanday murakkablikdagi bojxona yuk deklaratsiyalarini rasmiylashtiramiz, TFD va logistika bo'yicha maslahatlar beramiz, to'liq hujjatlar to'plamini tayyorlaymiz — tovaringiz chegarani tez, qonuniy va ortiqcha to'lovsiz o'tishi uchun.",
-    "callBtn": "Qo'ng'iroq qilish",
     "requestBtn": "Ariza yuborish",
     "badge1": "Litsenziyalangan broker",
     "badge2": "2025 yilda 2000+ deklaratsiya",
-    "badge3": "Bepul maslahat"
+    "badge3": "Bepul maslahat",
+    "servicesBtn": "Xizmatlarimiz"
   },
   "stats": {
     "years": "yil bozorda",
@@ -35,10 +35,26 @@
     "processLabel": "Qanday ishlaydi",
     "processTitle": "Ish jarayoni",
     "process": [
-      { "step": "01", "title": "Ariza", "desc": "Siz vazifani tavsiflaysiz — biz tahlil qilamiz va bepul maslahat beramiz." },
-      { "step": "02", "title": "Hujjatlar", "desc": "Siz bilan birga kerakli hujjatlar to'plamini yig'amiz." },
-      { "step": "03", "title": "Rasmiylashtirish", "desc": "Deklaratsiya topshiramiz, bojxona bilan to'liq muloqot olib boramiz." },
-      { "step": "04", "title": "Chiqarish", "desc": "Tovar chiqarildi. Barcha hujjatlar va hisobotni olasiz." }
+      {
+        "step": "01",
+        "title": "Ariza",
+        "desc": "Siz vazifani tavsiflaysiz — biz tahlil qilamiz va bepul maslahat beramiz."
+      },
+      {
+        "step": "02",
+        "title": "Hujjatlar",
+        "desc": "Siz bilan birga kerakli hujjatlar to'plamini yig'amiz."
+      },
+      {
+        "step": "03",
+        "title": "Rasmiylashtirish",
+        "desc": "Deklaratsiya topshiramiz, bojxona bilan to'liq muloqot olib boramiz."
+      },
+      {
+        "step": "04",
+        "title": "Chiqarish",
+        "desc": "Tovar chiqarildi. Barcha hujjatlar va hisobotni olasiz."
+      }
     ],
     "ctaTitle": "Rasmiylashtirish bo'yicha yordam kerakmi?",
     "ctaSubtitle": "Ariza qoldiring — vazifangiz uchun narx va muddatlar haqida aytamiz.",
@@ -103,10 +119,26 @@
     "valuesLabel": "Bizning tamoyillarimiz",
     "valuesTitle": "Kompaniya qadriyatlari",
     "values": [
-      { "icon": "👁", "title": "Shaffoflik", "desc": "Yashirin to'lovlar yo'q. Har bir operatsiya bo'yicha to'liq hisobot." },
-      { "icon": "⚡", "title": "Tezlik", "desc": "Kelishilgan muddatda bajaramiz. Shartnoma bilan kafolatlaymiz." },
-      { "icon": "🎓", "title": "Tajriba", "desc": "Ko'p yillik tajribaga ega sertifikatlangan deklarantlar." },
-      { "icon": "📞", "title": "24/7 qo'llab-quvvatlash", "desc": "Savollar ish vaqtidan tashqari ham paydo bo'ladi — biz doim aloqadamiz." }
+      {
+        "icon": "👁",
+        "title": "Shaffoflik",
+        "desc": "Yashirin to'lovlar yo'q. Har bir operatsiya bo'yicha to'liq hisobot."
+      },
+      {
+        "icon": "⚡",
+        "title": "Tezlik",
+        "desc": "Kelishilgan muddatda bajaramiz. Shartnoma bilan kafolatlaymiz."
+      },
+      {
+        "icon": "🎓",
+        "title": "Tajriba",
+        "desc": "Ko'p yillik tajribaga ega sertifikatlangan deklarantlar."
+      },
+      {
+        "icon": "📞",
+        "title": "24/7 qo'llab-quvvatlash",
+        "desc": "Savollar ish vaqtidan tashqari ham paydo bo'ladi — biz doim aloqadamiz."
+      }
     ],
     "teamLabel": "Odamlar",
     "teamTitle": "Bizning jamoamiz",
@@ -142,22 +174,119 @@
     "tagline": "O'zbekistonda bojxona brokeri"
   },
   "fallbackServices": [
-    { "title": "Import va eksport bojxona rasmiylashtiruvi", "description": "Har qanday murakkablikdagi bojxona yuk deklaratsiyalari — FMCGdan sanoat uskunalarigacha. 2025 yilda 2000 dan ortiq deklaratsiya.", "duration": "1–3 ish kuni", "icon": "import" },
-    { "title": "TFD va logistika bo'yicha maslahatlar", "description": "Bojxona qonunchiligi bo'yicha savollaringizni hal qilamiz, yetkazib berish marshrutini va bojxona yukini optimallashtiramiz. Birinchi maslahat bepul.", "duration": "Murojaat kunida", "icon": "consult" },
-    { "title": "To'liq hujjatlar to'plamini tayyorlash", "description": "Bojxona rasmiylashtiruvi uchun barcha hujjatlarni tayyorlaymiz: shartnomalar, invoyslar, qadoqlash ro'yxatlari, kelib chiqish sertifikatlari va ruxsatnomalar.", "duration": "1–2 ish kuni", "icon": "classify" },
-    { "title": "Sertifikatsiya va ruxsat berish tartiblari", "description": "Muvofiqlik sertifikatlari, sanitariya va fitosanitariya ruxsatnomalarini olish. Akkreditatsiyalangan organlar bilan ishlaymiz.", "duration": "3–10 ish kuni", "icon": "cert" },
-    { "title": "VIQ maqomini olish", "description": "Kompaniyalarga vakolatli iqtisodiy operator maqomini olishda yordam beramiz. Allaqachon 2 kompaniyani to'liq jarayon orqali kuzatdik.", "duration": "Kelishuv bo'yicha", "icon": "export" },
-    { "title": "Yirik mijozlar uchun «kalit tayyor» yechimlar", "description": "Dastlabki maslahatdan bitimni to'liq kuzatishgacha kompleks yondashuv. Shaxsiy menejer va ustuvor ishlov berish.", "duration": "Individual", "icon": "warehouse" }
+    {
+      "title": "Import va eksport bojxona rasmiylashtiruvi",
+      "description": "Har qanday murakkablikdagi bojxona yuk deklaratsiyalari — FMCGdan sanoat uskunalarigacha. 2025 yilda 2000 dan ortiq deklaratsiya.",
+      "duration": "1–3 ish kuni",
+      "icon": "import"
+    },
+    {
+      "title": "TFD va logistika bo'yicha maslahatlar",
+      "description": "Bojxona qonunchiligi bo'yicha savollaringizni hal qilamiz, yetkazib berish marshrutini va bojxona yukini optimallashtiramiz. Birinchi maslahat bepul.",
+      "duration": "Murojaat kunida",
+      "icon": "consult"
+    },
+    {
+      "title": "To'liq hujjatlar to'plamini tayyorlash",
+      "description": "Bojxona rasmiylashtiruvi uchun barcha hujjatlarni tayyorlaymiz: shartnomalar, invoyslar, qadoqlash ro'yxatlari, kelib chiqish sertifikatlari va ruxsatnomalar.",
+      "duration": "1–2 ish kuni",
+      "icon": "classify"
+    },
+    {
+      "title": "Sertifikatsiya va ruxsat berish tartiblari",
+      "description": "Muvofiqlik sertifikatlari, sanitariya va fitosanitariya ruxsatnomalarini olish. Akkreditatsiyalangan organlar bilan ishlaymiz.",
+      "duration": "3–10 ish kuni",
+      "icon": "cert"
+    },
+    {
+      "title": "VIQ maqomini olish",
+      "description": "Kompaniyalarga vakolatli iqtisodiy operator maqomini olishda yordam beramiz. Allaqachon 2 kompaniyani to'liq jarayon orqali kuzatdik.",
+      "duration": "Kelishuv bo'yicha",
+      "icon": "export"
+    },
+    {
+      "title": "Yirik mijozlar uchun «kalit tayyor» yechimlar",
+      "description": "Dastlabki maslahatdan bitimni to'liq kuzatishgacha kompleks yondashuv. Shaxsiy menejer va ustuvor ishlov berish.",
+      "duration": "Individual",
+      "icon": "warehouse"
+    }
   ],
   "fallbackCases": [
-    { "title": "To'qimachilik fabrikasi uchun uskunalarni rasmiylashtirish", "client_industry": "To'qimachilik sanoati", "challenge": "Turkiyadan noto'g'ri TN VED tasnifi bilan ixtisoslashtirilgan to'quv uskunalarini import qilish.", "result": "Bojxona to'lovlarida 15% tejamkorlik, 5 kun o'rniga 2 kunda rasmiylashtirish.", "tags": ["Import", "Uskuna", "Turkiya"] },
-    { "title": "BAA ga quritilgan mevalar eksporti", "client_industry": "Agrosanoat majmuasi", "challenge": "Murakkab fitosanitariya sertifikatsiyasi, BAA ning arab tilidagi hujjatlar va belgilash talablari.", "result": "Barcha ruxsatnomalar olindi, yuk o'z vaqtida jo'natildi, mijoz uzoq muddatli shartnoma tuzdi.", "tags": ["Eksport", "Agro", "BAA"] },
-    { "title": "Xitoydan muntazam elektronika importi", "client_industry": "Chakana savdo", "challenge": "Iste'mol elektronikasini muntazam yetkazib berishni tashkil etish, bojxonadagi to'xtab qolishni minimallashtirish.", "result": "24 soatlik rasmiylashtirish kafolati bilan jarayon yo'lga qo'yildi, operatsion xarajatlar 20% ga kamaydi.", "tags": ["Import", "Elektronika", "Xitoy"] }
+    {
+      "title": "To'qimachilik fabrikasi uchun uskunalarni rasmiylashtirish",
+      "client_industry": "To'qimachilik sanoati",
+      "challenge": "Turkiyadan noto'g'ri TN VED tasnifi bilan ixtisoslashtirilgan to'quv uskunalarini import qilish.",
+      "result": "Bojxona to'lovlarida 15% tejamkorlik, 5 kun o'rniga 2 kunda rasmiylashtirish.",
+      "tags": [
+        "Import",
+        "Uskuna",
+        "Turkiya"
+      ]
+    },
+    {
+      "title": "BAA ga quritilgan mevalar eksporti",
+      "client_industry": "Agrosanoat majmuasi",
+      "challenge": "Murakkab fitosanitariya sertifikatsiyasi, BAA ning arab tilidagi hujjatlar va belgilash talablari.",
+      "result": "Barcha ruxsatnomalar olindi, yuk o'z vaqtida jo'natildi, mijoz uzoq muddatli shartnoma tuzdi.",
+      "tags": [
+        "Eksport",
+        "Agro",
+        "BAA"
+      ]
+    },
+    {
+      "title": "Xitoydan muntazam elektronika importi",
+      "client_industry": "Chakana savdo",
+      "challenge": "Iste'mol elektronikasini muntazam yetkazib berishni tashkil etish, bojxonadagi to'xtab qolishni minimallashtirish.",
+      "result": "24 soatlik rasmiylashtirish kafolati bilan jarayon yo'lga qo'yildi, operatsion xarajatlar 20% ga kamaydi.",
+      "tags": [
+        "Import",
+        "Elektronika",
+        "Xitoy"
+      ]
+    }
   ],
   "fallbackStats": [
-    { "number": "7", "label": "yil bozorda" },
-    { "number": "2000", "label": "deklaratsiya rasmiylashtirildi" },
-    { "number": "12", "label": "mutaxassis jamoada" },
-    { "number": "24/7", "label": "mijozlarga qo'llab-quvvatlash" }
+    {
+      "number": "7",
+      "label": "yil bozorda"
+    },
+    {
+      "number": "2000",
+      "label": "deklaratsiya rasmiylashtirildi"
+    },
+    {
+      "number": "12",
+      "label": "mutaxassis jamoada"
+    },
+    {
+      "number": "24/7",
+      "label": "mijozlarga qo'llab-quvvatlash"
+    }
+  ],
+  "testimonials": {
+    "sectionLabel": "Mijozlar sharhlari",
+    "title": "Mijozlarimiz nima deyishadi",
+    "subtitle": "O'zbekistonning yetakchi import va eksportchilari bizga ishonishadi"
+  },
+  "fallbackTestimonials": [
+    {
+      "author_name": "Ruslan Karimov",
+      "author_role": "Logistika direktori",
+      "company": "Yirik FMCG distribyutori",
+      "text": "Vedovec bilan ikki yildan ortiq ishlayapmiz. Bu vaqt ichida bojxonada biror kechikish bo'lmadi. Jamoasi doimo aloqada va muammolarni tezda hal qiladi."
+    },
+    {
+      "author_name": "Nilufar Yusupova",
+      "author_role": "Bosh direktor",
+      "company": "Jihozlar importchisi",
+      "text": "Murakkab tasniflangan jihozlar bilan murojaat qildik. Vedovec 2 kunda hal qildi va bojxona to'lovlarida tejashga yordam berdi."
+    },
+    {
+      "author_name": "Sanjar Mirzaev",
+      "author_role": "Egasi",
+      "company": "Qishloq xo'jaligi eksporti",
+      "text": "BAA ga eksport uchun fitosanitariya sertifikatlashda yordam berishdi. Hamma hujjatlar aniq tayyorlandi, yuk o'z vaqtida jo'natildi."
+    }
   ]
 }

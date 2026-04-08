@@ -4,10 +4,11 @@ import ServicesGrid from "@/components/ServicesGrid";
 import StatsBar from "@/components/StatsBar";
 import CasesGrid from "@/components/CasesGrid";
 import ClientLogos from "@/components/ClientLogos";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactForm from "@/components/ContactForm";
 import SectionWrapper from "@/components/SectionWrapper";
-import Link from "next/link";
-import { getServices, getCaseStudies, getClientLogos, getCompany } from "@/lib/sanity";
+import { Link } from "@/lib/navigation";
+import { getServices, getCaseStudies, getClientLogos, getCompany, getTestimonials } from "@/lib/sanity";
 
 export const revalidate = 60;
 
@@ -18,11 +19,12 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
 
-  const [services, cases, logos, company] = await Promise.all([
+  const [services, cases, logos, company, testimonials] = await Promise.all([
     getServices().catch(() => []),
     getCaseStudies().catch(() => []),
     getClientLogos().catch(() => []),
     getCompany().catch(() => null),
+    getTestimonials().catch(() => []),
   ]);
 
   const t = await getTranslations({ locale });
@@ -72,8 +74,11 @@ export default async function HomePage({
         <CasesGrid cases={cases} preview />
       </SectionWrapper>
 
+      {/* Testimonials */}
+      <TestimonialsSection testimonials={testimonials} />
+
       {/* Clients */}
-      <SectionWrapper className="bg-slate-50">
+      <SectionWrapper className="bg-white">
         <div className="text-center mb-10">
           <h2 className="text-2xl font-bold text-slate-700">{t("clients.title")}</h2>
         </div>
