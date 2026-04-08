@@ -41,7 +41,7 @@ export default function HeroSection() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
           >
             {t("headline")}{" "}
-            <span className="text-accent">{t("headlineAccent")}</span>
+            <span className="text-blue-300">{t("headlineAccent")}</span>
           </motion.h1>
 
           <motion.p
