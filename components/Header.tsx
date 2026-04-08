@@ -46,7 +46,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img src="/logo.svg" alt="Vedovec" className="h-7 w-auto" />
+            <img src="/logo.svg" alt="Vedovec" className="h-[50px] w-auto" />
           </Link>
 
           {/* Desktop Nav */}

@@ -10,18 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#1A3A5C",
-          dark: "#112840",
-          light: "#244f7a",
+          DEFAULT: "#003399",
+          dark: "#042656",
+          light: "#1a52cc",
         },
         accent: {
-          DEFAULT: "#2A9D8F",
-          dark: "#1e7d72",
-          light: "#3ab8a9",
+          DEFAULT: "#003399",
+          dark: "#042656",
+          light: "#1a52cc",
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Manrope", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

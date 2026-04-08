@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -8,7 +8,7 @@ import { routing } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin", "cyrillic"] });
+const manrope = Manrope({ subsets: ["latin", "cyrillic"] });
 
 export async function generateMetadata({
   params,
@@ -72,7 +72,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={manrope.className}>
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
