@@ -59,7 +59,7 @@ async function sendEmail({
     subject: `Новая заявка с сайта — ${name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <div style="background: #1A3A5C; padding: 24px; border-radius: 8px 8px 0 0;">
+        <div style="background: #003399; padding: 24px; border-radius: 8px 8px 0 0;">
           <h2 style="color: #ffffff; margin: 0; font-size: 20px;">🔔 Новая заявка с сайта vedovec.uz</h2>
         </div>
         <div style="background: #f8fafc; padding: 24px; border: 1px solid #e2e8f0; border-top: none; border-radius: 0 0 8px 8px;">
@@ -75,7 +75,7 @@ async function sendEmail({
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 12px 0; color: #64748b; font-size: 13px;">📞 Телефон</td>
               <td style="padding: 12px 0; color: #1a1a2e; font-weight: 600;">
-                <a href="tel:${phone}" style="color: #2A9D8F; text-decoration: none;">${phone}</a>
+                <a href="tel:${phone}" style="color: #003399; text-decoration: none;">${phone}</a>
               </td>
             </tr>
             <tr>
@@ -83,8 +83,8 @@ async function sendEmail({
               <td style="padding: 12px 0; color: #1a1a2e;">${message || "не указано"}</td>
             </tr>
           </table>
-          <div style="margin-top: 20px; padding: 12px 16px; background: #2A9D8F20; border-left: 3px solid #2A9D8F; border-radius: 4px;">
-            <p style="margin: 0; font-size: 13px; color: #1A3A5C;">
+          <div style="margin-top: 20px; padding: 12px 16px; background: #00339920; border-left: 3px solid #003399; border-radius: 4px;">
+            <p style="margin: 0; font-size: 13px; color: #003399;">
               Заявка получена ${new Date().toLocaleString("ru-RU", { timeZone: "Asia/Tashkent" })} (Ташкент)
             </p>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 
 export default function Footer() {
@@ -21,11 +21,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-accent rounded-sm flex items-center justify-center">
-                <span className="text-white font-bold text-sm">В</span>
-              </div>
-              <span className="text-xl font-bold">Vedovec</span>
+            <div className="mb-4">
+              <img src="/logo.svg" alt="Vedovec" className="h-8 w-auto brightness-0 invert" />
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
               {t("footer.description")}

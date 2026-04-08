@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #1A3A5C;
-  --color-primary-dark: #112840;
-  --color-primary-light: #244f7a;
-  --color-accent: #2A9D8F;
-  --color-accent-dark: #1e7d72;
-  --color-accent-light: #3ab8a9;
-  --color-text: #1a1a2e;
+  --color-primary: #003399;
+  --color-primary-dark: #042656;
+  --color-primary-light: #1a52cc;
+  --color-accent: #003399;
+  --color-accent-dark: #042656;
+  --color-accent-light: #1a52cc;
+  --color-text: #000000;
   --color-text-muted: #64748b;
   --color-bg: #ffffff;
   --color-bg-subtle: #f8fafc;
-  --color-border: #e2e8f0;
+  --color-border: #e0e0e0;
 }
 
 @layer base {
@@ -23,7 +23,7 @@
 
   body {
     @apply text-slate-800 bg-white antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
