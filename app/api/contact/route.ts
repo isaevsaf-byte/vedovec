@@ -46,7 +46,7 @@ async function sendEmail({
   const resend = new Resend(apiKey);
 
   await resend.emails.send({
-    from: "Сайт Vedovec <noreply@vedovec.uz>",
+    from: "Vedovec <onboarding@resend.dev>",
     to: "info@vedovec.uz",
     subject: `Новая заявка с сайта — ${name}`,
     html: `
