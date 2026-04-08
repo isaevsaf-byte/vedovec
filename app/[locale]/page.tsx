@@ -20,11 +20,11 @@ export default async function HomePage({
   const { locale } = await params;
 
   const [services, cases, logos, company, testimonials] = await Promise.all([
-    getServices().catch(() => []),
-    getCaseStudies().catch(() => []),
+    getServices(locale).catch(() => []),
+    getCaseStudies(locale).catch(() => []),
     getClientLogos().catch(() => []),
-    getCompany().catch(() => null),
-    getTestimonials().catch(() => []),
+    getCompany(locale).catch(() => null),
+    getTestimonials(locale).catch(() => []),
   ]);
 
   const t = await getTranslations({ locale });

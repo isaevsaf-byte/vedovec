@@ -24,7 +24,7 @@ export default async function CasesPage({
 }) {
   const { locale } = await params;
   const [cases, t] = await Promise.all([
-    getCaseStudies().catch(() => []),
+    getCaseStudies(locale).catch(() => []),
     getTranslations({ locale }),
   ]);
 

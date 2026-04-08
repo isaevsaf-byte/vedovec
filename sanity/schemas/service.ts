@@ -1,49 +1,30 @@
 import { defineField, defineType } from "sanity";
+import { localizedString, localizedText } from "./localized";
 
 export default defineType({
   name: "service",
   title: "Услуга",
   type: "document",
   fields: [
-    defineField({
-      name: "title",
-      title: "Название",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    }),
+    localizedString("title", "Название", true),
     defineField({
       name: "slug",
-      title: "Slug",
+      title: "Slug (URL)",
       type: "slug",
-      options: { source: "title" },
+      options: { source: (doc: any) => doc.title?.ru ?? "" },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "description",
-      title: "Описание",
-      type: "text",
-    }),
-    defineField({
-      name: "duration",
-      title: "Срок выполнения",
-      type: "string",
-    }),
+    localizedText("description", "Описание"),
+    localizedString("duration", "Срок выполнения"),
     defineField({
       name: "icon",
       title: "Иконка (название)",
       type: "string",
+      description: "import | export | consult | classify | cert | warehouse",
     }),
-    defineField({
-      name: "order",
-      title: "Порядок",
-      type: "number",
-    }),
+    defineField({ name: "order", title: "Порядок", type: "number" }),
   ],
   orderings: [
-    {
-      title: "По порядку",
-      name: "orderAsc",
-      by: [{ field: "order", direction: "asc" }],
-    },
+    { title: "По порядку", name: "orderAsc", by: [{ field: "order", direction: "asc" }] },
   ],
 });

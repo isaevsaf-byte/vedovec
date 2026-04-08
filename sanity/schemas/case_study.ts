@@ -1,38 +1,22 @@
 import { defineField, defineType } from "sanity";
+import { localizedString, localizedText } from "./localized";
 
 export default defineType({
   name: "case_study",
   title: "Кейс",
   type: "document",
   fields: [
-    defineField({
-      name: "title",
-      title: "Заголовок",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    }),
+    localizedString("title", "Заголовок", true),
     defineField({
       name: "slug",
-      title: "Slug",
+      title: "Slug (URL)",
       type: "slug",
-      options: { source: "title" },
+      options: { source: (doc: any) => doc.title?.ru ?? "" },
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: "client_industry",
-      title: "Отрасль клиента",
-      type: "string",
-    }),
-    defineField({
-      name: "challenge",
-      title: "Задача",
-      type: "text",
-    }),
-    defineField({
-      name: "result",
-      title: "Результат",
-      type: "text",
-    }),
+    localizedString("client_industry", "Отрасль клиента"),
+    localizedText("challenge", "Задача / вызов"),
+    localizedText("result", "Результат"),
     defineField({
       name: "tags",
       title: "Теги",
@@ -40,10 +24,11 @@ export default defineType({
       of: [{ type: "string" }],
       options: { layout: "tags" },
     }),
-    defineField({
-      name: "publishedAt",
-      title: "Дата публикации",
-      type: "date",
-    }),
+    defineField({ name: "publishedAt", title: "Дата публикации", type: "date" }),
+    defineField({ name: "order", title: "Порядок", type: "number" }),
+  ],
+  orderings: [
+    { title: "По порядку", name: "orderAsc", by: [{ field: "order", direction: "asc" }] },
+    { title: "По дате (новые)", name: "dateDesc", by: [{ field: "publishedAt", direction: "desc" }] },
   ],
 });

@@ -30,7 +30,7 @@ export default async function AboutPage({
 }) {
   const { locale } = await params;
   const [teamFromSanity, t] = await Promise.all([
-    getTeamMembers().catch(() => []),
+    getTeamMembers(locale).catch(() => []),
     getTranslations({ locale }),
   ]);
 

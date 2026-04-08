@@ -24,7 +24,7 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   const [services, t] = await Promise.all([
-    getServices().catch(() => []),
+    getServices(locale).catch(() => []),
     getTranslations({ locale }),
   ]);
 
