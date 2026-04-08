@@ -1,47 +1,32 @@
-<svg viewBox="0 0 820 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- V: thin diagonal strokes forming chevron with 2 horizontal white-gap bars -->
-  <!-- Left diagonal: top-left to bottom-center -->
-  <!-- Right diagonal: top-right to bottom-center -->
-  <!-- Rendered as a filled shape with thin stroke aesthetic -->
-  <g fill="none" stroke="#003399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<svg viewBox="0 0 460 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#003399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
 
-    <!-- V1: left leg (top-left to bottom-center) -->
-    <line x1="8" y1="8" x2="58" y2="72"/>
-    <!-- V1: right leg (top-right to bottom-center) -->
-    <line x1="108" y1="8" x2="58" y2="72"/>
-    <!-- V1: upper horizontal crossing bar -->
-    <line x1="20" y1="28" x2="96" y2="28"/>
-    <!-- V1: lower horizontal crossing bar -->
-    <line x1="36" y1="50" x2="80" y2="50"/>
+    <!-- V (first): clean V, no internal bars -->
+    <polyline points="4,4 32,68 60,4"/>
 
-    <!-- E1: three horizontal bars -->
-    <line x1="124" y1="8"  x2="208" y2="8"/>
-    <line x1="124" y1="40" x2="208" y2="40"/>
-    <line x1="124" y1="72" x2="208" y2="72"/>
-    <!-- E1: vertical spine -->
-    <line x1="124" y1="8"  x2="124" y2="72"/>
+    <!-- E (first) -->
+    <line x1="74"  y1="4"  x2="74"  y2="68"/>
+    <line x1="74"  y1="4"  x2="122" y2="4"/>
+    <line x1="74"  y1="36" x2="118" y2="36"/>
+    <line x1="74"  y1="68" x2="122" y2="68"/>
 
-    <!-- D: half-oval outline — left spine + right arc -->
-    <path d="M 228,8 L 228,72 Q 310,72 310,40 Q 310,8 228,8"/>
+    <!-- D -->
+    <path d="M 136,4 L 136,68 C 178,68 200,55 200,36 C 200,17 178,4 136,4 Z"/>
 
-    <!-- O: rounded rectangle (stadium) outline -->
-    <rect x="328" y="8" width="100" height="64" rx="32"/>
+    <!-- O -->
+    <rect x="214" y="4" width="60" height="64" rx="30"/>
 
-    <!-- V2: same geometry shifted right by 456 -->
-    <line x1="464" y1="8" x2="514" y2="72"/>
-    <line x1="564" y1="8" x2="514" y2="72"/>
-    <line x1="476" y1="28" x2="552" y2="28"/>
-    <line x1="492" y1="50" x2="536" y2="50"/>
+    <!-- V (second): clean V, no internal bars -->
+    <polyline points="288,4 316,68 344,4"/>
 
-    <!-- E2: three horizontal bars -->
-    <line x1="580" y1="8"  x2="664" y2="8"/>
-    <line x1="580" y1="40" x2="664" y2="40"/>
-    <line x1="580" y1="72" x2="664" y2="72"/>
-    <!-- E2: vertical spine -->
-    <line x1="580" y1="8"  x2="580" y2="72"/>
+    <!-- E (second) -->
+    <line x1="358" y1="4"  x2="358" y2="68"/>
+    <line x1="358" y1="4"  x2="406" y2="4"/>
+    <line x1="358" y1="36" x2="402" y2="36"/>
+    <line x1="358" y1="68" x2="406" y2="68"/>
 
-    <!-- C: open arc (about 300 degrees, opening on right side) -->
-    <path d="M 802,20 A 40,32 0 1 0 802,60" stroke-linecap="round"/>
+    <!-- C -->
+    <path d="M 448,16 A 30,32 0 1 0 448,56" stroke-linecap="round"/>
 
   </g>
 </svg>
