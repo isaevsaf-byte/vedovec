@@ -62,7 +62,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-          {data.map((stat, index) => {
+          {data.filter(s => s.number).map((stat, index) => {
             const isSpecial = stat.number === "24/7" || stat.number.includes("+") || stat.number.includes("%");
             const numericValue = parseInt(stat.number.replace(/\D/g, ""), 10);
             const suffix = stat.number.includes("+") ? "+" : stat.number.includes("%") ? "%" : "";

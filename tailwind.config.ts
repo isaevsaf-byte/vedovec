@@ -11,17 +11,20 @@ const config: Config = {
       colors: {
         primary: {
           DEFAULT: "#003399",
-          dark: "#042656",
+          dark: "#000000",
           light: "#1a52cc",
+          navy: "#042656",
         },
         accent: {
           DEFAULT: "#003399",
-          dark: "#042656",
+          dark: "#000000",
           light: "#1a52cc",
+          navy: "#042656",
         },
       },
       fontFamily: {
         sans: ["Manrope", "sans-serif"],
+        heading: ["HeliosExtC", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

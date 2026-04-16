@@ -2,12 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'HeliosExtC';
+  src: url('/fonts/HeliosExtC.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HeliosExtC';
+  src: url('/fonts/HeliosExtC-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HeliosExtC';
+  src: url('/fonts/HeliosExtC-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --color-primary: #003399;
-  --color-primary-dark: #042656;
+  --color-primary-dark: #000000;
   --color-primary-light: #1a52cc;
   --color-accent: #003399;
-  --color-accent-dark: #042656;
+  --color-accent-dark: #000000;
   --color-accent-light: #1a52cc;
   --color-text: #000000;
   --color-text-muted: #64748b;
@@ -28,6 +52,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold leading-tight;
+    font-family: 'HeliosExtC', sans-serif;
   }
 }
 

@@ -4,11 +4,25 @@ import { Link } from "@/lib/navigation";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-export default function HeroSection() {
+interface HeroData {
+  headline?: string | null;
+  headlineAccent?: string | null;
+  description?: string | null;
+  cta_text?: string | null;
+  cta_link?: string | null;
+}
+
+export default function HeroSection({ hero }: { hero?: HeroData | null }) {
   const t = useTranslations("hero");
 
+  const headline = hero?.headline || t("headline");
+  const headlineAccent = hero?.headlineAccent || t("headlineAccent");
+  const description = hero?.description || t("description");
+  const ctaText = hero?.cta_text || t("requestBtn");
+  const ctaLink = hero?.cta_link || "/contacts";
+
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-primary-dark to-[#0d1f30] overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-primary-navy to-black overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -40,8 +54,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
           >
-            {t("headline")}{" "}
-            <span className="text-blue-300">{t("headlineAccent")}</span>
+            {headline}{" "}
+            <span className="text-blue-300">{headlineAccent}</span>
           </motion.h1>
 
           <motion.p
@@ -50,7 +64,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl"
           >
-            {t("description")}
+            {description}
           </motion.p>
 
           <motion.div
@@ -60,10 +74,10 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Link
-              href="/contacts"
+              href={ctaLink}
               className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-slate-100 transition-colors duration-200"
             >
-              {t("requestBtn")}
+              {ctaText}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

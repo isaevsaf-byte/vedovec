@@ -10,9 +10,9 @@
   },
   "hero": {
     "badge": "Bojxona brokeri · Toshkent · 2019 yildan",
-    "headline": "Ishonchli hamkor",
-    "headlineAccent": "TFD va bojxona rasmiylashtirishda",
-    "description": "Har qanday murakkablikdagi bojxona yuk deklaratsiyalarini rasmiylashtiramiz, TFD va logistika bo'yicha maslahatlar beramiz, to'liq hujjatlar to'plamini tayyorlaymiz — tovaringiz chegarani tez, qonuniy va ortiqcha to'lovsiz o'tishi uchun.",
+    "headline": "TFD va bojxona rasmiylashtirishida",
+    "headlineAccent": "Ishonchli hamkor",
+    "description": "Mahsulotlaringiz chegarani tez, qonuniy va ortiqcha to'lovsiz o'tishi uchun har qanday murakkablikdagi bojxona yuk deklaratsiyalarini rasmiylashtiramiz, TFD va logistika bo'yicha maslahatlar beramiz, to'liq hujjatlar to'plamini tayyorlaymiz.",
     "requestBtn": "Ariza yuborish",
     "badge1": "Litsenziyalangan broker",
     "badge2": "2025 yilda 2000+ deklaratsiya",
@@ -20,15 +20,15 @@
     "servicesBtn": "Xizmatlarimiz"
   },
   "stats": {
-    "years": "yil bozorda",
+    "years": "bozorda yil",
     "declarations": "deklaratsiya rasmiylashtirildi",
-    "team": "mutaxassis jamoada",
-    "support": "mijozlarga qo'llab-quvvatlash"
+    "team": "mutaxassislar jamoasida",
+    "support": "mijozlarni qo'llab-quvvatlash"
   },
   "services": {
     "sectionLabel": "Biz nima qilamiz",
     "title": "Bizning xizmatlarimiz",
-    "subtitle": "Konsultatsiyadan tortib yakuniy rasmiylashtirishgacha to'liq bojxona xizmatlari. Barcha byurokratik jarayonni o'z zimmamizga olamiz.",
+    "subtitle": "Konsultatsiyadan boshlab yakuniy rasmiylashtirishgacha bo'lgan to'liq bojxona xizmatlari. Barcha byurokratik jarayonni o'z zimmamizga olamiz.",
     "allServicesBtn": "Barcha xizmatlar",
     "pageTitle": "Bizning xizmatlarimiz",
     "pageSubtitle": "O'zbekistondagi importchilar va eksportchilar uchun to'liq bojxona xizmatlari. Tez, shaffof va qonun doirasida ishlaymiz.",
@@ -62,10 +62,10 @@
   },
   "cases": {
     "sectionLabel": "Bizning tajribamiz",
-    "title": "Mijozlar ishlari",
+    "title": "Mijozlar bilan ishlarimiz",
     "subtitle": "Mijozlarimiz uchun hal qilgan real vazifalar. Raqamlardagi aniq natijalar.",
     "allBtn": "Barcha ishlar",
-    "pageTitle": "Mijozlar ishlari",
+    "pageTitle": "Mijozlar bilan ishlarimiz",
     "pageSubtitle": "Real vazifalar va natijalar. Turli tarmoqlardagi kompaniyalar uchun murakkab bojxona masalalarini qanday hal qilganimizni ko'ring.",
     "taskLabel": "Vazifa",
     "resultLabel": "Natija",
@@ -78,7 +78,7 @@
   "contact": {
     "sectionLabel": "Boshlashga tayyormisiz?",
     "title": "Bepul maslahat oling",
-    "subtitle": "Vazifangiz haqida ayting — 30 daqiqa ichida bog'lanamiz va eng yaxshi yechimni taklif qilamiz.",
+    "subtitle": "Vazifangiz haqida ayting — biz siz bilan 30 daqiqa ichida bog'lanamiz va eng yaxshi yechimni taklif qilamiz.",
     "benefit1": "Bepul dastlabki maslahat",
     "benefit2": "1 soat ichida narx hisob-kitobi",
     "benefit3": "Rasmiylashtirish muddatlariga kafolat",
@@ -137,10 +137,10 @@
       {
         "icon": "📞",
         "title": "24/7 qo'llab-quvvatlash",
-        "desc": "Savollar ish vaqtidan tashqari ham paydo bo'ladi — biz doim aloqadamiz."
+        "desc": "Savollar ish vaqtidan tashqari ham paydo bo'lishi mumkin — biz doim aloqadamiz."
       }
     ],
-    "teamLabel": "Odamlar",
+    "teamLabel": "Xodimlar",
     "teamTitle": "Bizning jamoamiz",
     "ctaTitle": "Yaqindan tanishamizmi?",
     "ctaSubtitle": "Toshkentdagi ofisimizga konsultatsiyaga keling yoki ariza qoldiring — qulay vaqtda qayta qo'ng'iroq qilamiz."
@@ -205,7 +205,7 @@
       "icon": "export"
     },
     {
-      "title": "Yirik mijozlar uchun «kalit tayyor» yechimlar",
+      "title": "Yirik mijozlar uchun «tayyor kalit» yechimlar",
       "description": "Dastlabki maslahatdan bitimni to'liq kuzatishgacha kompleks yondashuv. Shaxsiy menejer va ustuvor ishlov berish.",
       "duration": "Individual",
       "icon": "warehouse"
@@ -227,7 +227,7 @@
       "title": "BAA ga quritilgan mevalar eksporti",
       "client_industry": "Agrosanoat majmuasi",
       "challenge": "Murakkab fitosanitariya sertifikatsiyasi, BAA ning arab tilidagi hujjatlar va belgilash talablari.",
-      "result": "Barcha ruxsatnomalar olindi, yuk o'z vaqtida jo'natildi, mijoz uzoq muddatli shartnoma tuzdi.",
+      "result": "Barcha ruxsatnomalar olindi, yuk o'z vaqtida jo'natildi, mijoz biz bilan uzoq muddatli shartnoma imzoladi.",
       "tags": [
         "Eksport",
         "Agro",
@@ -237,7 +237,7 @@
     {
       "title": "Xitoydan muntazam elektronika importi",
       "client_industry": "Chakana savdo",
-      "challenge": "Iste'mol elektronikasini muntazam yetkazib berishni tashkil etish, bojxonadagi to'xtab qolishni minimallashtirish.",
+      "challenge": "Iste'mol elektronikasini muntazam yetkazib berishni tashkil etish, bojxonadagi to'xtab qolishning oldini olish.",
       "result": "24 soatlik rasmiylashtirish kafolati bilan jarayon yo'lga qo'yildi, operatsion xarajatlar 20% ga kamaydi.",
       "tags": [
         "Import",
@@ -249,7 +249,7 @@
   "fallbackStats": [
     {
       "number": "7",
-      "label": "yil bozorda"
+      "label": "bozorda yil"
     },
     {
       "number": "2000",
@@ -257,16 +257,16 @@
     },
     {
       "number": "12",
-      "label": "mutaxassis jamoada"
+      "label": "mutaxassislar jamoasida"
     },
     {
       "number": "24/7",
-      "label": "mijozlarga qo'llab-quvvatlash"
+      "label": "mijozlarni qo'llab-quvvatlash"
     }
   ],
   "testimonials": {
     "sectionLabel": "Mijozlar sharhlari",
-    "title": "Mijozlarimiz nima deyishadi",
+    "title": "Mijozlarimizning biz haqimizdagi fikrlari",
     "subtitle": "O'zbekistonning yetakchi import va eksportchilari bizga ishonishadi"
   },
   "fallbackTestimonials": [
@@ -274,7 +274,7 @@
       "author_name": "Ruslan Karimov",
       "author_role": "Logistika direktori",
       "company": "Yirik FMCG distribyutori",
-      "text": "Vedovec bilan ikki yildan ortiq ishlayapmiz. Bu vaqt ichida bojxonada biror kechikish bo'lmadi. Jamoasi doimo aloqada va muammolarni tezda hal qiladi."
+      "text": "Vedovec bilan ikki yildan ortiq ishlayapmiz. Bu vaqt ichida bojxonada biror bir kechikish bo'lmadi. Jamoa biz bilan doimo aloqada va muammolarni tezda hal qiladi."
     },
     {
       "author_name": "Nilufar Yusupova",

@@ -77,7 +77,7 @@ export default async function ContactsPage({
 
   return (
     <>
-      <div className="bg-gradient-to-br from-primary to-primary-dark text-white pt-32 pb-16">
+      <div className="bg-gradient-to-br from-primary via-primary-navy to-black text-white pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-accent font-semibold text-sm uppercase tracking-widest">
             {t("contacts.sectionLabel")}

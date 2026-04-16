@@ -95,6 +95,20 @@ export async function getContact(locale = "ru") {
   );
 }
 
+// ─── Page Hero ───────────────────────────────────────────────────────────────
+export async function getPageHero(page: string, locale = "ru") {
+  return client.fetch(
+    `*[_type == "page_hero" && page == $page][0] {
+      "headline": coalesce(headline[$locale], headline.ru),
+      "headlineAccent": coalesce(headlineAccent[$locale], headlineAccent.ru),
+      "description": coalesce(description[$locale], description.ru),
+      "cta_text": coalesce(cta_text[$locale], cta_text.ru),
+      cta_link
+    }`,
+    { page, locale }
+  );
+}
+
 // ─── Company ─────────────────────────────────────────────────────────────────
 export async function getCompany(locale = "ru") {
   return client.fetch(

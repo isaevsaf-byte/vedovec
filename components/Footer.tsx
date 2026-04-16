@@ -16,13 +16,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <img src="/logo.svg" alt="Vedovec" className="h-8 w-auto brightness-0 invert" />
+              <img src="/logo-white.svg" alt="Vedovec" className="h-8 w-auto" />
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
               {t("footer.description")}

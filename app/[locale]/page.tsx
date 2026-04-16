@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactForm from "@/components/ContactForm";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Link } from "@/lib/navigation";
-import { getServices, getCaseStudies, getClientLogos, getCompany, getTestimonials } from "@/lib/sanity";
+import { getServices, getCaseStudies, getClientLogos, getCompany, getTestimonials, getPageHero } from "@/lib/sanity";
 
 export const revalidate = 60;
 
@@ -19,12 +19,13 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
 
-  const [services, cases, logos, company, testimonials] = await Promise.all([
+  const [services, cases, logos, company, testimonials, hero] = await Promise.all([
     getServices(locale).catch(() => []),
     getCaseStudies(locale).catch(() => []),
     getClientLogos().catch(() => []),
     getCompany(locale).catch(() => null),
     getTestimonials(locale).catch(() => []),
+    getPageHero("home", locale).catch(() => null),
   ]);
 
   const t = await getTranslations({ locale });
@@ -32,7 +33,7 @@ export default async function HomePage({
 
   return (
     <>
-      <HeroSection />
+      <HeroSection hero={hero} />
       <StatsBar stats={stats} />
 
       {/* Services */}
