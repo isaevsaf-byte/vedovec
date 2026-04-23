@@ -109,6 +109,32 @@ export async function getPageHero(page: string, locale = "ru") {
   );
 }
 
+// ─── About Page ──────────────────────────────────────────────────────────────
+export async function getAboutPage(locale = "ru") {
+  return client.fetch(
+    `*[_type == "about_page"][0] {
+      "pageTitle": coalesce(pageTitle[$locale], pageTitle.ru),
+      "pageSubtitle": coalesce(pageSubtitle[$locale], pageSubtitle.ru),
+      "historyTitle": coalesce(historyTitle[$locale], historyTitle.ru),
+      "p1": coalesce(p1[$locale], p1.ru),
+      "p2": coalesce(p2[$locale], p2.ru),
+      "p3": coalesce(p3[$locale], p3.ru),
+      "stats": stats[] {
+        number,
+        "label": coalesce(label[$locale], label.ru)
+      },
+      "values": values[] {
+        icon,
+        "title": coalesce(title[$locale], title.ru),
+        "desc": coalesce(desc[$locale], desc.ru)
+      },
+      "ctaTitle": coalesce(ctaTitle[$locale], ctaTitle.ru),
+      "ctaSubtitle": coalesce(ctaSubtitle[$locale], ctaSubtitle.ru)
+    }`,
+    { locale }
+  );
+}
+
 // ─── Company ─────────────────────────────────────────────────────────────────
 export async function getCompany(locale = "ru") {
   return client.fetch(

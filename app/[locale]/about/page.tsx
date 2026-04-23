@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import SectionWrapper from "@/components/SectionWrapper";
 import ContactForm from "@/components/ContactForm";
-import { getTeamMembers } from "@/lib/sanity";
+import { getTeamMembers, getAboutPage } from "@/lib/sanity";
 
 export const revalidate = 60;
 
@@ -29,10 +29,13 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const [teamFromSanity, t] = await Promise.all([
+  const [teamFromSanity, aboutFromSanity, t] = await Promise.all([
     getTeamMembers(locale).catch(() => []),
+    getAboutPage(locale).catch(() => null),
     getTranslations({ locale }),
   ]);
+
+  const about = aboutFromSanity ?? {};
 
   const teamMembers: { name: string; role: string; bio: string; initials: string }[] =
     teamFromSanity.length > 0
@@ -42,14 +45,25 @@ export default async function AboutPage({
         }))
       : fallbackTeam;
 
-  const values = t.raw("about.values") as { icon: string; title: string; desc: string }[];
+  const fallbackValues = t.raw("about.values") as { icon: string; title: string; desc: string }[];
+  const values: { icon: string; title: string; desc: string }[] =
+    about.values?.length > 0 ? about.values : fallbackValues;
+
+  const fallbackStats = [
+    { number: "2019", label: t("about.stat1") },
+    { number: "2000+", label: t("about.stat2") },
+    { number: "12", label: t("about.stat3") },
+    { number: "2", label: t("about.stat4") },
+  ];
+  const stats: { number: string; label: string }[] =
+    about.stats?.length > 0 ? about.stats : fallbackStats;
 
   return (
     <>
       <div className="bg-gradient-to-br from-primary via-primary-navy to-black text-white pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("about.pageTitle")}</h1>
-          <p className="text-slate-300 text-lg max-w-2xl">{t("about.pageSubtitle")}</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{about.pageTitle ?? t("about.pageTitle")}</h1>
+          <p className="text-slate-300 text-lg max-w-2xl">{about.pageSubtitle ?? t("about.pageSubtitle")}</p>
         </div>
       </div>
 
@@ -59,24 +73,21 @@ export default async function AboutPage({
             <span className="text-accent font-semibold text-sm uppercase tracking-widest">
               {t("about.historyLabel")}
             </span>
-            <h2 className="text-3xl font-bold text-primary mt-2 mb-6">{t("about.historyTitle")}</h2>
+            <h2 className="text-3xl font-bold text-primary mt-2 mb-6">{about.historyTitle ?? t("about.historyTitle")}</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed">
-              <p>{t("about.p1")}</p>
-              <p>{t("about.p2")}</p>
-              <p>{t("about.p3")}</p>
+              <p>{about.p1 ?? t("about.p1")}</p>
+              <p>{about.p2 ?? t("about.p2")}</p>
+              <p>{about.p3 ?? t("about.p3")}</p>
             </div>
           </div>
           <div className="bg-slate-50 rounded-2xl p-8">
             <div className="grid grid-cols-2 gap-6">
-              {(["2019", "2000+", "12", "2"] as const).map((num, i) => {
-                const keys = ["stat1", "stat2", "stat3", "stat4"] as const;
-                return (
-                  <div key={i} className="text-center">
-                    <div className="text-3xl font-bold text-accent mb-1">{num}</div>
-                    <p className="text-sm text-slate-500">{t(`about.${keys[i]}`)}</p>
+              {stats.map((stat) => (
+                  <div key={stat.number} className="text-center">
+                    <div className="text-3xl font-bold text-accent mb-1">{stat.number}</div>
+                    <p className="text-sm text-slate-500">{stat.label}</p>
                   </div>
-                );
-              })}
+                ))}
             </div>
           </div>
         </div>
@@ -124,8 +135,8 @@ export default async function AboutPage({
       <SectionWrapper className="bg-primary text-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("about.ctaTitle")}</h2>
-            <p className="text-slate-300 text-lg">{t("about.ctaSubtitle")}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{about.ctaTitle ?? t("about.ctaTitle")}</h2>
+            <p className="text-slate-300 text-lg">{about.ctaSubtitle ?? t("about.ctaSubtitle")}</p>
           </div>
           <div className="bg-white rounded-2xl p-8">
             <ContactForm />
