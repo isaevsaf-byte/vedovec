@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getContact } from "@/lib/sanity";
 
 const manrope = Manrope({ subsets: ["latin", "cyrillic"] });
 
@@ -69,6 +70,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const contact = await getContact(locale);
 
   return (
     <html lang={locale}>
@@ -76,7 +78,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
-          <Footer />
+          <Footer contact={contact} />
         </NextIntlClientProvider>
       </body>
     </html>

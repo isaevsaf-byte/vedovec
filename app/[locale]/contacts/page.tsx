@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import SectionWrapper from "@/components/SectionWrapper";
 import ContactForm from "@/components/ContactForm";
+import { getContact } from "@/lib/sanity";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,12 @@ export default async function ContactsPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const contact = await getContact(locale);
+
+  const phone = contact?.phone ?? "+998 90 973-30-90";
+  const email = contact?.email ?? "info@vedovec.uz";
+  const telegram = contact?.telegram ?? "vedovec";
+  const whatsapp = contact?.whatsapp ?? "998909733090";
 
   const contactItems = [
     {
@@ -29,8 +36,8 @@ export default async function ContactsPage({
         </svg>
       ),
       label: t("contacts.phone"),
-      value: "+998 90 973-30-90",
-      href: "tel:+998909733090",
+      value: phone,
+      href: `tel:${phone.replace(/\D/g, "")}`,
     },
     {
       icon: (
@@ -39,8 +46,8 @@ export default async function ContactsPage({
         </svg>
       ),
       label: t("contacts.email"),
-      value: "info@vedovec.uz",
-      href: "mailto:info@vedovec.uz",
+      value: email,
+      href: `mailto:${email}`,
     },
     {
       icon: (
@@ -49,8 +56,8 @@ export default async function ContactsPage({
         </svg>
       ),
       label: t("contacts.telegram"),
-      value: "@vedovec",
-      href: "https://t.me/vedovec",
+      value: `@${telegram}`,
+      href: `https://t.me/${telegram}`,
     },
     {
       icon: (
@@ -59,8 +66,8 @@ export default async function ContactsPage({
         </svg>
       ),
       label: t("contacts.whatsapp"),
-      value: "+998 90 973-30-90",
-      href: "https://wa.me/998909733090",
+      value: phone,
+      href: `https://wa.me/${whatsapp.replace(/\D/g, "")}`,
     },
     {
       icon: (

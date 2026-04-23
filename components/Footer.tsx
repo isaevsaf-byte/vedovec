@@ -3,9 +3,21 @@
 import { Link } from "@/lib/navigation";
 import { useTranslations } from "next-intl";
 
-export default function Footer() {
+interface ContactData {
+  phone?: string;
+  email?: string;
+  telegram?: string;
+  whatsapp?: string;
+}
+
+export default function Footer({ contact }: { contact?: ContactData }) {
   const t = useTranslations();
   const year = new Date().getFullYear();
+
+  const phone = contact?.phone ?? "+998 90 973-30-90";
+  const email = contact?.email ?? "info@vedovec.uz";
+  const telegram = contact?.telegram ?? "vedovec";
+  const whatsapp = contact?.whatsapp ?? "998909733090";
 
   const navLinks = [
     { href: "/", label: t("nav.home") },
@@ -51,21 +63,21 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">{t("footer.contacts")}</h3>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
-                <a href="tel:+998909733090" className="hover:text-accent transition-colors">
-                  +998 90 973-30-90
+                <a href={`tel:${phone.replace(/\D/g, "")}`} className="hover:text-accent transition-colors">
+                  {phone}
                 </a>
               </li>
               <li>
-                <a href="mailto:info@vedovec.uz" className="hover:text-accent transition-colors">
-                  info@vedovec.uz
+                <a href={`mailto:${email}`} className="hover:text-accent transition-colors">
+                  {email}
                 </a>
               </li>
               <li>{t("contacts.addressValue")}</li>
               <li className="flex gap-3 pt-2">
-                <a href="https://t.me/vedovec" className="text-slate-300 hover:text-accent transition-colors font-medium">
+                <a href={`https://t.me/${telegram}`} className="text-slate-300 hover:text-accent transition-colors font-medium">
                   Telegram
                 </a>
-                <a href="https://wa.me/998909733090" className="text-slate-300 hover:text-accent transition-colors font-medium">
+                <a href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`} className="text-slate-300 hover:text-accent transition-colors font-medium">
                   WhatsApp
                 </a>
               </li>

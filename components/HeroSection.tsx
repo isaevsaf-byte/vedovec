@@ -15,8 +15,8 @@ interface HeroData {
 export default function HeroSection({ hero }: { hero?: HeroData | null }) {
   const t = useTranslations("hero");
 
-  const headline = hero?.headline || t("headline");
-  const headlineAccent = hero?.headlineAccent || t("headlineAccent");
+  const headline = (hero?.headline || t("headline")).replace(/-/g, "\u2011");
+  const headlineAccent = (hero?.headlineAccent || t("headlineAccent")).replace(/-/g, "\u2011");
   const description = hero?.description || t("description");
   const ctaText = hero?.cta_text || t("requestBtn");
   const ctaLink = hero?.cta_link || "/contacts";
@@ -37,25 +37,15 @@ export default function HeroSection({ hero }: { hero?: HeroData | null }) {
       <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 text-accent-light rounded-full px-4 py-1.5 text-sm font-medium mb-8"
-          >
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            {t("badge")}
-          </motion.div>
-
+        <div className="max-w-5xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+            className="text-4xl md:text-5xl lg:text-[2.5rem] font-bold text-white leading-tight mb-6 hyphens-none"
           >
-            {headline}{" "}
-            <span className="text-blue-300">{headlineAccent}</span>
+            {headline}
+            <span className="block text-blue-300">{headlineAccent}</span>
           </motion.h1>
 
           <motion.p
@@ -104,6 +94,16 @@ export default function HeroSection({ hero }: { hero?: HeroData | null }) {
                 {badge}
               </div>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="mt-10 inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white rounded-full px-4 py-1.5 text-sm font-medium"
+          >
+            <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+            {t("badge")}
           </motion.div>
         </div>
       </div>
