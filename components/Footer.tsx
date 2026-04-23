@@ -8,6 +8,7 @@ interface ContactData {
   email?: string;
   telegram?: string;
   whatsapp?: string;
+  address?: string;
 }
 
 export default function Footer({ contact }: { contact?: ContactData }) {
@@ -18,6 +19,7 @@ export default function Footer({ contact }: { contact?: ContactData }) {
   const email = contact?.email ?? "info@vedovec.uz";
   const telegram = contact?.telegram ?? "vedovec";
   const whatsapp = contact?.whatsapp ?? "998909733090";
+  const address = contact?.address ?? null;
 
   const navLinks = [
     { href: "/", label: t("nav.home") },
@@ -72,7 +74,7 @@ export default function Footer({ contact }: { contact?: ContactData }) {
                   {email}
                 </a>
               </li>
-              <li>{t("contacts.addressValue")}</li>
+              <li>{address ?? t("contacts.addressValue")}</li>
               <li className="flex gap-3 pt-2">
                 <a href={`https://t.me/${telegram}`} className="text-slate-300 hover:text-accent transition-colors font-medium">
                   Telegram

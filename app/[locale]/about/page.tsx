@@ -48,10 +48,7 @@ export default async function AboutPage({
     <>
       <div className="bg-gradient-to-br from-primary via-primary-navy to-black text-white pt-32 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-            {t("about.sectionLabel")}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-4">{t("about.pageTitle")}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("about.pageTitle")}</h1>
           <p className="text-slate-300 text-lg max-w-2xl">{t("about.pageSubtitle")}</p>
         </div>
       </div>

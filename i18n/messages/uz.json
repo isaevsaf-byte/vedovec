@@ -156,7 +156,7 @@
     "telegram": "Telegram",
     "whatsapp": "WhatsApp",
     "address": "Manzil",
-    "addressValue": "Toshkent, Amir Temur ko'chasi, 1, 405-ofis",
+    "addressValue": "Toshkent sh., Yakkasaroy tumani, Abdulla Qahhar ko'chasi, 47",
     "hoursTitle": "Ish vaqti",
     "weekdays": "Dushanba — Juma",
     "weekdaysHours": "9:00 — 18:00",
@@ -167,7 +167,7 @@
     "telegram247": "Telegram va WhatsApp — 24/7"
   },
   "footer": {
-    "description": "Toshkentda TFD va bojxona rasmiylashtirishda ishonchli hamkor.",
+    "description": "TFD va bojxona rasmiylashtirishda ishonchli hamkor.",
     "nav": "Navigatsiya",
     "contacts": "Aloqa",
     "rights": "Barcha huquqlar himoyalangan.",
