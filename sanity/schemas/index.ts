@@ -7,6 +7,7 @@ import testimonial from "./testimonial";
 import contact from "./contact";
 import pageHero from "./page_hero";
 import aboutPage from "./about_page";
+import homeCta from "./home_cta";
 
 export const schemaTypes = [
   company,
@@ -18,4 +19,5 @@ export const schemaTypes = [
   contact,
   pageHero,
   aboutPage,
+  homeCta,
 ];

@@ -135,6 +135,21 @@ export async function getAboutPage(locale = "ru") {
   );
 }
 
+// ─── Home CTA ────────────────────────────────────────────────────────────────
+export async function getHomeCta(locale = "ru") {
+  return client.fetch(
+    `*[_type == "home_cta"][0] {
+      "sectionLabel": coalesce(sectionLabel[$locale], sectionLabel.ru),
+      "title": coalesce(title[$locale], title.ru),
+      "subtitle": coalesce(subtitle[$locale], subtitle.ru),
+      "benefits": benefits[] {
+        "text": coalesce(text[$locale], text.ru)
+      }
+    }`,
+    { locale }
+  );
+}
+
 // ─── Company ─────────────────────────────────────────────────────────────────
 export async function getCompany(locale = "ru") {
   return client.fetch(

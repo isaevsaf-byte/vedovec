@@ -3,7 +3,7 @@ import { localizedString, localizedText } from "./localized";
 
 export default defineType({
   name: "about_page",
-  title: "О компании",
+  title: "О нас",
   type: "document",
   fields: [
     // Header

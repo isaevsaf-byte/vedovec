@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactForm from "@/components/ContactForm";
 import SectionWrapper from "@/components/SectionWrapper";
 import { Link } from "@/lib/navigation";
-import { getServices, getCaseStudies, getClientLogos, getCompany, getTestimonials, getPageHero } from "@/lib/sanity";
+import { getServices, getCaseStudies, getClientLogos, getCompany, getTestimonials, getPageHero, getHomeCta } from "@/lib/sanity";
 
 export const revalidate = 60;
 
@@ -19,13 +19,14 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
 
-  const [services, cases, logos, company, testimonials, hero] = await Promise.all([
+  const [services, cases, logos, company, testimonials, hero, cta] = await Promise.all([
     getServices(locale).catch(() => []),
     getCaseStudies(locale).catch(() => []),
     getClientLogos().catch(() => []),
     getCompany(locale).catch(() => null),
     getTestimonials(locale).catch(() => []),
     getPageHero("home", locale).catch(() => null),
+    getHomeCta(locale).catch(() => null),
   ]);
 
   const t = await getTranslations({ locale });
@@ -87,31 +88,48 @@ export default async function HomePage({
       </SectionWrapper>
 
       {/* CTA */}
-      <SectionWrapper className="bg-primary text-white" id="contact">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
-              {t("contact.sectionLabel")}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">{t("contact.title")}</h2>
-            <p className="text-slate-300 text-lg mb-6">{t("contact.subtitle")}</p>
-            <ul className="space-y-3 text-slate-300">
-              {(["benefit1", "benefit2", "benefit3", "benefit4"] as const).map((key) => (
-                <li key={key} className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  {t(`contact.${key}`)}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-white rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-slate-800 mb-6">{t("form.title")}</h3>
-            <ContactForm />
-          </div>
-        </div>
-      </SectionWrapper>
+      {(() => {
+        const ctaSectionLabel = cta?.sectionLabel ?? t("contact.sectionLabel");
+        const ctaTitle = cta?.title ?? t("contact.title");
+        const ctaSubtitle = cta?.subtitle ?? t("contact.subtitle");
+        const fallbackBenefits = [
+          t("contact.benefit1"),
+          t("contact.benefit2"),
+          t("contact.benefit3"),
+          t("contact.benefit4"),
+        ];
+        const benefits: string[] =
+          cta?.benefits?.length > 0
+            ? cta.benefits.map((b: { text: string }) => b.text)
+            : fallbackBenefits;
+        return (
+          <SectionWrapper className="bg-primary text-white" id="contact">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+                  {ctaSectionLabel}
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">{ctaTitle}</h2>
+                <p className="text-slate-300 text-lg mb-6">{ctaSubtitle}</p>
+                <ul className="space-y-3 text-slate-300">
+                  {benefits.map((benefit) => (
+                    <li key={benefit} className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-white rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-slate-800 mb-6">{t("form.title")}</h3>
+                <ContactForm />
+              </div>
+            </div>
+          </SectionWrapper>
+        );
+      })()}
     </>
   );
 }
